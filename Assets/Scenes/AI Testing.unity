@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 173662510}
   - component: {fileID: 173662509}
-  m_Layer: 0
-  m_Name: Fondo
+  - component: {fileID: 173662511}
+  m_Layer: 14
+  m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,6 +208,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &173662511
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173662508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &236262663
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +413,7 @@ GameObject:
   - component: {fileID: 530836598}
   - component: {fileID: 530836597}
   - component: {fileID: 530836596}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +526,7 @@ GameObject:
   - component: {fileID: 1131747758}
   - component: {fileID: 1131747757}
   - component: {fileID: 1131747756}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +641,7 @@ GameObject:
   - component: {fileID: 1878690829}
   - component: {fileID: 1878690830}
   m_Layer: 0
-  m_Name: IA
+  m_Name: EnemigoBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -703,7 +730,10 @@ MonoBehaviour:
   objetivo: {fileID: 236262665}
   vida: 100
   ataque: 20
-  velocidad: 0.05
+  velocidad: 0.03
+  suelo:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!114 &1878690830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +750,7 @@ MonoBehaviour:
   speed: 0.05
   obstacles:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8192
   searchShortcut: 0
   snapToGrid: 0
   drawDebugLines: 1
