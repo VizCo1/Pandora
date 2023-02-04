@@ -90,7 +90,7 @@ public class ControlJugador : MonoBehaviour
                 anim.SetBool("moving", false);
             }
 
-            rb.velocity = Vector2.Lerp(rb.velocity, move * velocidad, smoothing);
+            rb.velocity = Vector2.Lerp(rb.velocity, move * velocidad * Time.deltaTime, smoothing);
         }
     }
 }

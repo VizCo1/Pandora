@@ -9,16 +9,12 @@ public class Stats
 {
     [Range(0, 1)]
     public float ataque;
-    //public InputActionReference botonIntercambioAtaque;
     
     [Range(0, 1)]
     public float defensa;
-    //public InputActionReference botonIntercambioDefensa;
+   
     [Range(0, 1)]
     public float velocidad;
-    //public InputActionReference botonIntercambioVelocidad;
-
-    public PlayerInput playerInput;
 }
 
 public enum TipoStat
