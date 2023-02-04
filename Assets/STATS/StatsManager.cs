@@ -47,6 +47,9 @@ public class StatsManager : MonoBehaviour
 
     private int statExchangeType = 0;
 
+    private bool exchangingP1;
+    private bool exchangingP2;
+
     void Awake()
     {
         ataqueJ1 = statsUI1.transform.GetChild(0).GetComponent<Slider>();
@@ -65,51 +68,106 @@ public class StatsManager : MonoBehaviour
 
         if(exchangingStats)
         {
-            IntercambiarStatParaJ1(statExchangeType);
+            if(exchangingP1)
+                IntercambiarStatParaJ1(statExchangeType);
+            if(exchangingP2)
+                IntercambiarStatParaJ2(statExchangeType);
         }
 
     }
 
-    public void BotonAtaquePulsado(InputAction.CallbackContext context)
+    public void BotonAtaquePulsadoJ1(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Debug.Log("Se pulsó intercambiar ataque");
             exchangingStats = true;
+            exchangingP1 = true;
             statExchangeType = (int)TipoStat.Ataque;
         }
         else if(context.canceled)
         {
-            Debug.Log("Se Deja de intercambiar ataque");
+            exchangingP1 = false;
             exchangingStats = false;
         }
         
     }
 
-    public void BotonDefensaPulsado(InputAction.CallbackContext context)
+    public void BotonAtaquePulsadoJ2(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             exchangingStats = true;
-            statExchangeType = (int)TipoStat.Defensa;
+            exchangingP2 = true;
+            statExchangeType = (int)TipoStat.Ataque;
         }
         else if (context.canceled)
         {
+            exchangingP2 = false;
             exchangingStats = false;
         }
 
     }
 
-    public void BotonVelocidadPulsado(InputAction.CallbackContext context)
+    public void BotonDefensaPulsadoJ1(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             exchangingStats = true;
+            exchangingP1 = true;
+            statExchangeType = (int)TipoStat.Defensa;
+        }
+        else if (context.canceled)
+        {
+            exchangingP1 = false;
+            exchangingStats = false;
+        }
+
+    }
+
+    public void BotonDefensaPulsadoJ2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            exchangingStats = true;
+            exchangingP2 = true;
+            statExchangeType = (int)TipoStat.Defensa;
+        }
+        else if (context.canceled)
+        {
+            exchangingP2 = false;
+            exchangingStats = false;
+        }
+
+    }
+
+    public void BotonVelocidadPulsadoJ1(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            exchangingStats = true;
+            exchangingP1 = true;
             statExchangeType = (int)TipoStat.Velocidad;
         }
         else if (context.canceled)
         {
             exchangingStats = false;
+            exchangingP1 = false;
+        }
+
+    }
+
+    public void BotonVelocidadPulsadoJ2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            exchangingStats = true;
+            exchangingP2 = true;
+            statExchangeType = (int)TipoStat.Velocidad;
+        }
+        else if (context.canceled)
+        {
+            exchangingStats = false;
+            exchangingP2 = false;
         }
 
     }
@@ -118,29 +176,60 @@ public class StatsManager : MonoBehaviour
     {
         if (tipo == (int)TipoStat.Ataque)
         {
-            if (statsJugador1.ataque > 0 && statsJugador1.ataque < 1 && statsJugador2.ataque > 0 && statsJugador2.ataque < 1)
+            if (statsJugador1.ataque >= 0 && statsJugador1.ataque < 1 && statsJugador2.ataque > 0 && statsJugador2.ataque <= 1)
             {
                 IncreaseStat(ref statsJugador1.ataque);
 
                 DecreaseStat(ref statsJugador2.ataque);
             }
         } 
-        else if(tipo == 1)
+        else if (tipo == (int)TipoStat.Defensa)
         {
-            if (statsJugador1.defensa > 0 && statsJugador1.defensa < 1 && statsJugador2.defensa > 0 && statsJugador2.defensa < 1)
+            if (statsJugador1.defensa >= 0 && statsJugador1.defensa < 1 && statsJugador2.defensa > 0 && statsJugador2.defensa <= 1)
             {
                 IncreaseStat(ref statsJugador1.defensa);
 
                 DecreaseStat(ref statsJugador2.defensa);
             }
         }
-        else
+        else if (tipo == (int)TipoStat.Velocidad)
         {
-            if (statsJugador1.velocidad > 0 && statsJugador1.velocidad < 1 && statsJugador2.velocidad > 0 && statsJugador2.velocidad < 1)
+            if (statsJugador1.velocidad >= 0 && statsJugador1.velocidad < 1 && statsJugador2.velocidad > 0 && statsJugador2.velocidad <= 1)
             {
                 IncreaseStat(ref statsJugador1.velocidad);
 
                 DecreaseStat(ref statsJugador2.velocidad);
+            }
+        }
+    }
+
+    public void IntercambiarStatParaJ2(int tipo)
+    {
+        if (tipo == (int)TipoStat.Ataque)
+        {
+            if (statsJugador1.ataque > 0 && statsJugador1.ataque <= 1 && statsJugador2.ataque >= 0 && statsJugador2.ataque < 1)
+            {
+                DecreaseStat(ref statsJugador1.ataque);
+
+                IncreaseStat(ref statsJugador2.ataque);
+            }
+        }
+        else if (tipo == (int)TipoStat.Defensa)
+        {
+            if (statsJugador1.defensa > 0 && statsJugador1.defensa <= 1 && statsJugador2.defensa >= 0 && statsJugador2.defensa < 1)
+            {
+                DecreaseStat(ref statsJugador1.defensa);
+
+                IncreaseStat(ref statsJugador2.defensa);
+            }
+        }
+        else if (tipo == (int)TipoStat.Velocidad)
+        {
+            if (statsJugador1.velocidad > 0 && statsJugador1.velocidad <=  1 && statsJugador2.velocidad >= 0 && statsJugador2.velocidad < 1)
+            {
+                DecreaseStat(ref statsJugador1.velocidad);
+
+                IncreaseStat(ref statsJugador2.velocidad);
             }
         }
     }

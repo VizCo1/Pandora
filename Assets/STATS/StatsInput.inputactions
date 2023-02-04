@@ -118,7 +118,13 @@
         {
             "name": "Jugador2",
             "bindingGroup": "Jugador2",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }

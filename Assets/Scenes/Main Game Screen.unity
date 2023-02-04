@@ -280,6 +280,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &511358973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511358975}
+  - component: {fileID: 511358974}
+  m_Layer: 0
+  m_Name: JUGADOR 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &511358974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511358973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d7e37818c0b6fd746b176a62dea7de33, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1969680449}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: BotonAtaquePulsadoJ2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4c7378a2-0b52-4837-8dfa-34d45b18be05
+    m_ActionName: Stats/Intercambio_ataque[/SwitchProControllerHID/dpad/left,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1969680449}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: BotonDefensaPulsadoJ2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9b3e260f-af43-4f02-9f37-e6c421aa0817
+    m_ActionName: Stats/Intercambio_defensa[/Keyboard/e,/SwitchProControllerHID/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1969680449}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: BotonVelocidadPulsadoJ2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a23d2135-85eb-4942-8ef3-0d918b2c56bb
+    m_ActionName: Stats/Intercambio_velocidad[/Keyboard/f,/SwitchProControllerHID/dpad/right]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Jugador2
+  m_DefaultActionMap: Stats
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &511358975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511358973}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 481.32724, y: 228.75853, z: 3.634448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &727783123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -488,7 +598,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1969680449}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonAtaquePulsado
+        m_MethodName: BotonAtaquePulsadoJ1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -504,7 +614,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1969680449}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonDefensaPulsado
+        m_MethodName: BotonDefensaPulsadoJ1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -520,7 +630,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1969680449}
         m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonVelocidadPulsado
+        m_MethodName: BotonVelocidadPulsadoJ1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -619,7 +729,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348363640
 GameObject:
@@ -818,7 +928,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1659775862
 MonoBehaviour:
@@ -896,7 +1006,7 @@ MonoBehaviour:
     velocidad: 0.7
     playerInput: {fileID: 0}
   statsUI2: {fileID: 1693914221}
-  velocidadReduccion: 0.2
+  velocidadReduccion: 0.4
 --- !u!4 &1969680450
 Transform:
   m_ObjectHideFlags: 0
@@ -910,7 +1020,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099998846
 GameObject:
@@ -1006,7 +1116,7 @@ RectTransform:
   m_Children:
   - {fileID: 1348363641}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
