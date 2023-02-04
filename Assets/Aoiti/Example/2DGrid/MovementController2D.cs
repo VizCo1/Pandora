@@ -8,7 +8,7 @@ public class MovementController2D : MonoBehaviour
 {
     [Header("Navigator options")]
     [SerializeField] float gridSize = 0.5f; //increase patience or gridSize for larger maps
-    [SerializeField] float speed = 0.05f; //increase for faster movement
+    float speed; //increase for faster movement
     
     Pathfinder<Vector2> pathfinder; //the pathfinder object that stores the methods and patience
 
