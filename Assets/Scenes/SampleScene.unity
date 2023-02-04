@@ -362,7 +362,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.048, y: 2.048}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -384,7 +384,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -392,6 +392,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!212 &830537951 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 281208399430124506, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+  m_PrefabInstance: {fileID: 471263194220632308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &471263194220632308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,12 +409,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 830537949}
     - target: {fileID: 5810670911585918, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 830537951}
+    - target: {fileID: 5810670911585918, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: velocidad
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 281208399430124506, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc0e725b08a3225458e150a1cab2b803, type: 3}
     - target: {fileID: 5233628187983563030, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6684020086424422938, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: m_RootOrder
