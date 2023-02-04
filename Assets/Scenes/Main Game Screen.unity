@@ -422,6 +422,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8532111055780048411, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
   m_PrefabInstance: {fileID: 727783123}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &857674997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8532111056411583777, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
+  m_PrefabInstance: {fileID: 727783123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1257892930
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +509,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348363640
 GameObject:
@@ -723,7 +728,66 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1693914221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7246042907290067697, guid: b4a67d4201120744a8430465eaf0b12a, type: 3}
+  m_PrefabInstance: {fileID: 6965051423495868571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1969680448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969680450}
+  - component: {fileID: 1969680449}
+  m_Layer: 0
+  m_Name: StatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1969680449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969680448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f00546e47e8054484250c809982ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsJugador1:
+    ataque: 1
+    defensa: 0.5
+    velocidad: 0.1
+  statsUI1: {fileID: 857674997}
+  statsJugador2:
+    ataque: 0.4
+    defensa: 0.8
+    velocidad: 0.7
+  statsUI2: {fileID: 1693914221}
+--- !u!4 &1969680450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969680448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 481.32724, y: 228.75853, z: 3.634448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099998846
 GameObject:
@@ -819,7 +883,7 @@ RectTransform:
   m_Children:
   - {fileID: 1348363641}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
