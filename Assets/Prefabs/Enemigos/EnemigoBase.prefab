@@ -126,5 +126,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   searchShortcut: 0
-  snapToGrid: 0
+  snapToGrid: 1
   drawDebugLines: 1

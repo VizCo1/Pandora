@@ -22,9 +22,7 @@ public class EnemigoB : Enemigo
         else if (distanciaJugador2 < distanciaVision)
             EvitarJugador(objetivos[jugadorObjetivo].position);
         else if (puedeDisparar)
-        {
             LanzarProyectil();
-        }
 
     }
 
@@ -81,6 +79,7 @@ public class EnemigoB : Enemigo
     {
         yield return new WaitForSeconds(2.5f);
 
+        Destroy(bala);
         puedeDisparar = true;
     }
 

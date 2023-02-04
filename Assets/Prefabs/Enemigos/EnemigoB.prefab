@@ -129,7 +129,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   searchShortcut: 0
-  snapToGrid: 0
+  snapToGrid: 1
   drawDebugLines: 1
 --- !u!1 &6131952997027673538
 GameObject:
