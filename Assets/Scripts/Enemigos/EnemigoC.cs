@@ -11,11 +11,21 @@ public class EnemigoC : Enemigo
     bool puedeEmbestir = true;
     bool embestidaPreparada = false;
 
+    SpriteRenderer spriteRenderer;
 
     override protected void Start()
     {
         base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void ComprobarFlipX(Vector2 direccion)
+    {
+        if (direccion.x > 0.5f)
+            spriteRenderer.flipX = false;
+        else
+            spriteRenderer.flipX = true;
     }
 
     override protected void Update()
@@ -27,15 +37,25 @@ public class EnemigoC : Enemigo
             if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision && puedeEmbestir)
             {
                 PrepararEmbestida();
+                Vector2 direccion = transform.position - objetivos[jugadorObjetivo].position;
+                direccion.Normalize();
+                ComprobarFlipX(direccion);
             }
             else if (distanciaJugador2 < distanciaVision && puedeEmbestir)
             {
                 PrepararEmbestida();
+                Vector2 direccion = transform.position - objetivos[jugadorObjetivo].position;
+                direccion.Normalize();
+                ComprobarFlipX(direccion);
             }
             else
+            {
                 Patrullar();
+                Vector2 direccion = transform.position - walkPoint;
+                direccion.Normalize();
+                ComprobarFlipX(direccion);
+            }
         }
-
     }
 
     private void PrepararEmbestida()

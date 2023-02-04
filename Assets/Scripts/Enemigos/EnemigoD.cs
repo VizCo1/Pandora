@@ -8,9 +8,20 @@ public class EnemigoD : Enemigo
     [SerializeField] Vector2[] direcciones;
     bool puedeDisparar = true;
 
+    SpriteRenderer spriteRenderer;
+
     override protected void Start()
     {
         base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void ComprobarFlipX(Vector2 direccion)
+    {
+        if (direccion.x > 0.5f)
+            spriteRenderer.flipX = false;
+        else
+            spriteRenderer.flipX = true;
     }
 
     override protected void Update()
@@ -31,6 +42,10 @@ public class EnemigoD : Enemigo
                 if (puedeDisparar)        
                     Ataque();
             }
+
+            Vector2 direccion = transform.position - objetivos[jugadorObjetivo].position;
+            direccion.Normalize();
+            ComprobarFlipX(direccion);
         }
 
     }
