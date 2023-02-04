@@ -24,11 +24,16 @@ public class Enemigo : MonoBehaviour
     {
         movementController2D.SetSpeed(velocidad); 
     }
-    
+
     void Update()
     {
-        //movementController2D.MoveTo(objetivo.position);
+        MoverA(objetivo.position);
         Patrullar();
+    }
+
+    protected virtual void MoverA(Vector3 pos)
+    {
+        movementController2D.MoveTo(pos);
     }
 
     protected virtual void Patrullar()
@@ -48,12 +53,12 @@ public class Enemigo : MonoBehaviour
     private void SearchWalkPoint()
     {
         //Calculate random point in range
-        float randomY = UnityEngine.Random.Range(-2, 2);
-        float randomX = UnityEngine.Random.Range(-2, 2);
+        float randomY = UnityEngine.Random.Range(-4, 4);
+        float randomX = UnityEngine.Random.Range(-4, 4);
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y + randomY, transform.position.z + 0.5f);
 
-        if (Physics.Raycast(walkPoint, transform.forward, 2f, suelo))
+        if (Physics2D.Raycast(walkPoint, transform.forward, 2f, suelo))
         {
             Debug.Log("Si");
             walkPointSet = true;

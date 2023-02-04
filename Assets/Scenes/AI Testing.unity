@@ -730,7 +730,7 @@ MonoBehaviour:
   objetivo: {fileID: 236262665}
   vida: 100
   ataque: 20
-  velocidad: 0.03
+  velocidad: 0.01
   suelo:
     serializedVersion: 2
     m_Bits: 16384
