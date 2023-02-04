@@ -18,9 +18,9 @@ public class Enemigo : MonoBehaviour
 
     [SerializeField] protected float distanciaVision;
 
-    bool walkPointSet = false;
-    private Vector3 walkPoint;
-    [SerializeField] LayerMask suelo;
+    protected bool walkPointSet = false;
+    protected private Vector3 walkPoint;
+    [SerializeField] protected LayerMask suelo;
 
     protected float distanciaJugador1;
     protected float distanciaJugador2;
@@ -48,6 +48,8 @@ public class Enemigo : MonoBehaviour
             jugadorObjetivo = 0;
         else
             jugadorObjetivo = 1;
+
+        Debug.Log(jugadorObjetivo);
     }
 
     protected void MoverA(Vector3 pos)
@@ -60,7 +62,7 @@ public class Enemigo : MonoBehaviour
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
-            movementController2D.MoveTo(walkPoint);
+            MoverA(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -108,7 +110,7 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, distanciaVision);
     }
