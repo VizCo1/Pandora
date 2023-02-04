@@ -1,0 +1,124 @@
+{
+    "name": "StatsInput",
+    "maps": [
+        {
+            "name": "Stats",
+            "id": "c048cc42-bba4-4a1d-8f80-9a7a47e8ddd4",
+            "actions": [
+                {
+                    "name": "Intercambio_ataque",
+                    "type": "Button",
+                    "id": "4c7378a2-0b52-4837-8dfa-34d45b18be05",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Intercambio_defensa",
+                    "type": "Button",
+                    "id": "9b3e260f-af43-4f02-9f37-e6c421aa0817",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Intercambio_velocidad",
+                    "type": "Button",
+                    "id": "a23d2135-85eb-4942-8ef3-0d918b2c56bb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e816ddad-d1a4-4c11-9510-2bb0f85314d8",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador2",
+                    "action": "Intercambio_ataque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d064a85-cc36-4dff-9ea8-516f88f10d78",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador1",
+                    "action": "Intercambio_ataque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb90997b-fcaa-4e55-8971-809a3f28e6af",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador1",
+                    "action": "Intercambio_defensa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82f56bac-2a9b-4f9e-9442-8ad04f11a7a6",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador2",
+                    "action": "Intercambio_defensa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "931760fb-5f5a-47b5-b6dc-317b6ee87feb",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador1",
+                    "action": "Intercambio_velocidad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3420082c-5079-41a9-afc3-c7821527cd9c",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador2",
+                    "action": "Intercambio_velocidad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Jugador1",
+            "bindingGroup": "Jugador1",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Jugador2",
+            "bindingGroup": "Jugador2",
+            "devices": []
+        }
+    ]
+}
