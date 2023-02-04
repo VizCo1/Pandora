@@ -10,33 +10,59 @@ public class Enemigo : MonoBehaviour
     const string AZUL = "Azul";
 
     [SerializeField] MovementController2D movementController2D;
-    [SerializeField] Transform objetivo;
+    [SerializeField] protected Transform[] objetivos;
+    protected int jugadorObjetivo = 0;
     public float vida;
     public float ataque;
     public float velocidad; // 0.05 es bastantante rapido
 
-    bool walkPointSet = false;
-    private Vector3 walkPoint;
-    [SerializeField] LayerMask suelo;
+    [SerializeField] protected float distanciaVision;
+
+    protected bool walkPointSet = false;
+    protected private Vector3 walkPoint;
+    [SerializeField] protected LayerMask suelo;
+
+    protected float distanciaJugador1;
+    protected float distanciaJugador2;
 
 
-    void Start()
+    protected virtual void Start()
     {
-        movementController2D.SetSpeed(velocidad); 
+        movementController2D.SetSpeed(velocidad);
+        SeleccionarSubtipo();
     }
 
+    protected virtual void Update()
+    {
+        ComprobarTarget();
+        //MoverA(objetivos[jugadorObjetivo].position);
+        //Debug.Log(jugadorObjetivo);
+    }
 
-    protected virtual void MoverA(Vector3 pos)
+    private void ComprobarTarget()
+    {
+        distanciaJugador1 = Vector2.Distance(transform.position, objetivos[0].position);
+        distanciaJugador2 = Vector2.Distance(transform.position, objetivos[1].position);
+
+        if (distanciaJugador1 < distanciaJugador2)
+            jugadorObjetivo = 0;
+        else
+            jugadorObjetivo = 1;
+
+        Debug.Log(jugadorObjetivo);
+    }
+
+    protected void MoverA(Vector3 pos)
     {
         movementController2D.MoveTo(pos);
     }
 
-    protected virtual void Patrullar()
+    protected void Patrullar()
     {
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
-            movementController2D.MoveTo(walkPoint);
+            MoverA(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -82,5 +108,10 @@ public class Enemigo : MonoBehaviour
 
                 break;
         }
+    }
+
+    protected virtual void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, distanciaVision);
     }
 }

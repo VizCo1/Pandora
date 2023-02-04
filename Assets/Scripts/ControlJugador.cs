@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController))]
 public class ControlJugador : MonoBehaviour
 {
     
     private Animator anim;
-    private CharacterController control;
+    [SerializeField] private Rigidbody2D rb;
 
     [SerializeField]
     private float velocidad = 5.0f;
+
+    [SerializeField]
+    private float smoothing = 0.2f;
 
     private Vector3 playerVelocity;
     
@@ -18,7 +20,6 @@ public class ControlJugador : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        control = gameObject.GetComponent<CharacterController>();
     }
 
     public void EnMovimiento(InputAction.CallbackContext context)
@@ -30,15 +31,11 @@ public class ControlJugador : MonoBehaviour
 
     void Update()
     {
+        Vector3 move = new Vector2(movimientoInput.x, movimientoInput.y);
 
-        Vector3 move = new Vector3(movimientoInput.x, 0, movimientoInput.y);
-        control.Move(move * Time.deltaTime* velocidad);
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
+        move = move.normalized;
+        //rb.MovePosition(rb.transform.position + move * velocidad * Time.deltaTime);
 
-        control.Move(playerVelocity * Time.deltaTime);
-
+        rb.velocity = Vector2.Lerp(rb.velocity, move * velocidad, smoothing);
     }
 }
