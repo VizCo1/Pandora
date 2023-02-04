@@ -3,7 +3,11 @@ using UnityEngine.InputSystem;
 
 public class ControlJugador : MonoBehaviour
 {
-    
+
+    public StatsManager statManager;
+    public int playerNumber = 0;
+    private Stats playerStats;
+
     private Animator anim;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer sr;
@@ -24,8 +28,14 @@ public class ControlJugador : MonoBehaviour
 
     private bool attacking = false;
 
-    private void Start()
+
+    private void Awake()
     {
+        if (playerNumber == 0)
+            playerStats = statManager.statsJugador1;
+        else
+            playerStats = statManager.statsJugador2;
+
         anim = GetComponent<Animator>();
         attackParticles.Stop();
     }
@@ -90,7 +100,7 @@ public class ControlJugador : MonoBehaviour
                 anim.SetBool("moving", false);
             }
 
-            rb.velocity = Vector2.Lerp(rb.velocity, move * velocidad * Time.deltaTime, smoothing);
+            rb.velocity = Vector2.Lerp(rb.velocity * playerStats.velocidad, move * velocidad * Time.deltaTime, smoothing);
         }
     }
 }

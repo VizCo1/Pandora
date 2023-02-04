@@ -203,6 +203,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 822384067}
     m_Modifications:
+    - target: {fileID: 66875545124989248, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
+    - target: {fileID: 364538551608746932, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
     - target: {fileID: 520936718289024799, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -254,6 +262,14 @@ PrefabInstance:
     - target: {fileID: 6623793618922701691, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
       propertyPath: velocidad
       value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623793618922701691, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: statManager
+      value: 
+      objectReference: {fileID: 1969680449}
+    - target: {fileID: 6623793618922701691, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: playerNumber
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6627282102997319126, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
       propertyPath: m_ActionEvents.Array.size
@@ -367,6 +383,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7480284944001960098, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253468940209233046, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
 --- !u!4 &149970845 stripped
@@ -460,12 +484,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 949061505}
-  - {fileID: 511358975}
-  - {fileID: 1969680450}
   - {fileID: 2099998850}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335094078
 GameObject:
@@ -503,7 +524,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BackGroundColor: {r: 0.2264151, g: 0.07515624, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -609,116 +630,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 26.12, y: 1}
   m_EdgeRadius: 0
---- !u!1 &511358973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 511358975}
-  - component: {fileID: 511358974}
-  m_Layer: 0
-  m_Name: JUGADOR 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &511358974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511358973}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d7e37818c0b6fd746b176a62dea7de33, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1969680449}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonAtaquePulsadoJ2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4c7378a2-0b52-4837-8dfa-34d45b18be05
-    m_ActionName: Stats/Intercambio_ataque[/SwitchProControllerHID/dpad/left,/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1969680449}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonDefensaPulsadoJ2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9b3e260f-af43-4f02-9f37-e6c421aa0817
-    m_ActionName: Stats/Intercambio_defensa[/Keyboard/e,/SwitchProControllerHID/dpad/up]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1969680449}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonVelocidadPulsadoJ2
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: a23d2135-85eb-4942-8ef3-0d918b2c56bb
-    m_ActionName: Stats/Intercambio_velocidad[/Keyboard/f,/SwitchProControllerHID/dpad/right]
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Jugador2
-  m_DefaultActionMap: Stats
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!4 &511358975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511358973}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 481.32724, y: 228.75853, z: 3.634448}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 284934869}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &727783123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -854,6 +765,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8532111056411583779, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.72156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532111056411583779, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532111056411583779, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.37647063
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
 --- !u!224 &727783124 stripped
@@ -928,123 +851,13 @@ Transform:
   - {fileID: 149970845}
   - {fileID: 736430955}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857674997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8532111056411583777, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
   m_PrefabInstance: {fileID: 727783123}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &949061504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 949061505}
-  - component: {fileID: 949061506}
-  m_Layer: 0
-  m_Name: JUGADOR 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &949061505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949061504}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 481.32724, y: 228.75853, z: 3.634448}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 284934869}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &949061506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949061504}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d7e37818c0b6fd746b176a62dea7de33, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1969680449}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonAtaquePulsadoJ1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4c7378a2-0b52-4837-8dfa-34d45b18be05
-    m_ActionName: Stats/Intercambio_ataque[/SwitchProControllerHID/dpad/left,/Keyboard/q]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1969680449}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonDefensaPulsadoJ1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9b3e260f-af43-4f02-9f37-e6c421aa0817
-    m_ActionName: Stats/Intercambio_defensa[/Keyboard/e,/SwitchProControllerHID/dpad/up]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1969680449}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: BotonVelocidadPulsadoJ1
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: a23d2135-85eb-4942-8ef3-0d918b2c56bb
-    m_ActionName: Stats/Intercambio_velocidad[/Keyboard/f,/SwitchProControllerHID/dpad/right]
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Jugador1
-  m_DefaultActionMap: Stats
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1050429242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1039,22 @@ PrefabInstance:
       propertyPath: velocidad
       value: 1600
       objectReference: {fileID: 0}
+    - target: {fileID: 5810670911585918, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: statManager
+      value: 
+      objectReference: {fileID: 1969680449}
+    - target: {fileID: 2986699849011847571, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339106587911452071, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563225706516550725, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
     - target: {fileID: 6684020086424422938, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1269,6 +1098,10 @@ PrefabInstance:
     - target: {fileID: 6684020086424422938, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843162545577483953, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_TagString
+      value: Damager
       objectReference: {fileID: 0}
     - target: {fileID: 8805235981116779008, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: m_Name
@@ -1536,7 +1369,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1659775862
 MonoBehaviour:
@@ -1612,7 +1445,7 @@ MonoBehaviour:
     defensa: 0.8
     velocidad: 0.7
   statsUI2: {fileID: 1693914221}
-  velocidadReduccion: 0.4
+  velocidadReduccion: 0.3
 --- !u!4 &1969680450
 Transform:
   m_ObjectHideFlags: 0
@@ -1625,7 +1458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 284934869}
+  m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099998846
@@ -1704,7 +1537,7 @@ RectTransform:
   m_Children:
   - {fileID: 1348363641}
   m_Father: {fileID: 284934869}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1725,6 +1558,18 @@ PrefabInstance:
     - target: {fileID: 7246042907254724280, guid: b4a67d4201120744a8430465eaf0b12a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246042907290067699, guid: b4a67d4201120744a8430465eaf0b12a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.52156866
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246042907290067699, guid: b4a67d4201120744a8430465eaf0b12a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246042907290067699, guid: b4a67d4201120744a8430465eaf0b12a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6862745
       objectReference: {fileID: 0}
     - target: {fileID: 7246042907724540360, guid: b4a67d4201120744a8430465eaf0b12a, type: 3}
       propertyPath: m_Name
