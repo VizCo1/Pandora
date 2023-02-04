@@ -17,18 +17,22 @@ public class EnemigoD : Enemigo
     {
         base.Update();
 
-        MoverA(objetivos[jugadorObjetivo].position);
-
-        if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision)
+        if (desplazamientoInicialCompletado)
         {
-            if (puedeDisparar)
-                LanzarProyectiles();
+            MoverA(objetivos[jugadorObjetivo].position);
+
+            if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision)
+            {
+                if (puedeDisparar)
+                    LanzarProyectiles();
+            }
+            else if (distanciaJugador2 < distanciaVision)
+            {         
+                if (puedeDisparar)        
+                    LanzarProyectiles();
+            }
         }
-        else if (distanciaJugador2 < distanciaVision)
-        {         
-            if (puedeDisparar)        
-                LanzarProyectiles();
-        }
+
     }
 
     private void LanzarProyectiles()

@@ -24,22 +24,24 @@ public class EnemigoC : Enemigo
     {
         base.Update();
 
-        Debug.Log(tiempo);
+        if (desplazamientoInicialCompletado)
+        {
+            if (tiempo != 0 || embestidaPreparada)
+            {
+                Embestir();
+            }
+            else if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision && puedeEmbestir)
+            {
+                Embestir();
+            }
+            else if (distanciaJugador2 < distanciaVision && puedeEmbestir)
+            {
+                Embestir();
+            }
+            else
+                Patrullar();
+        }
 
-        if (tiempo != 0 || embestidaPreparada)
-        {
-            Embestir();
-        }
-        else if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision && puedeEmbestir)
-        {
-            Embestir();
-        }
-        else if (distanciaJugador2 < distanciaVision && puedeEmbestir)
-        {
-            Embestir();
-        }
-        else
-            Patrullar();
     }
 
     void Embestir()
@@ -52,6 +54,8 @@ public class EnemigoC : Enemigo
             puedeEmbestir = false;
 
             rb.velocity = direccion * 20;
+
+            embestidaPreparada = false;
 
             StartCoroutine(ResetEmbestida());
         }
@@ -70,7 +74,7 @@ public class EnemigoC : Enemigo
     {
         yield return new WaitForSeconds(3f);
         puedeEmbestir = true;
-        embestidaPreparada = false;
+        //embestidaPreparada = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
