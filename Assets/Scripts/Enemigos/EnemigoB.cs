@@ -17,12 +17,16 @@ public class EnemigoB : Enemigo
     override protected void Update()
     {
         base.Update();
-        if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision)
-            EvitarJugador(objetivos[jugadorObjetivo].position);
-        else if (distanciaJugador2 < distanciaVision)
-            EvitarJugador(objetivos[jugadorObjetivo].position);
-        else if (puedeDisparar)
-            LanzarProyectil();
+
+        if (desplazamientoInicialCompletado)
+        {
+            if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision)
+                EvitarJugador(objetivos[jugadorObjetivo].position);
+            else if (distanciaJugador2 < distanciaVision)
+                EvitarJugador(objetivos[jugadorObjetivo].position);
+            else if (puedeDisparar)
+                LanzarProyectil();
+        }
 
     }
 
@@ -36,7 +40,7 @@ public class EnemigoB : Enemigo
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1.2f)
+        if (distanceToWalkPoint.magnitude < 1.33f)
         {
             porcentajeDeDistancia = 1f;
             walkPointSet = false;
@@ -49,15 +53,13 @@ public class EnemigoB : Enemigo
 
         walkPoint = transform.position - v;
 
-        if (Physics2D.Raycast(walkPoint, transform.forward, 2f, suelo))
+        if (Physics2D.Raycast(walkPoint, transform.forward, 2f, mascaraSuelo))
         {
-            Debug.Log("Si");
             walkPointSet = true;
         }
         else if (porcentajeDeDistancia > 0f)
         {
             porcentajeDeDistancia -= 0.1f;
-            Debug.Log("No");
         }
     }
 
