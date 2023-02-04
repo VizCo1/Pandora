@@ -766,14 +766,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 371873631}
     - target: {fileID: 7786955686273138205, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
-      propertyPath: distanciaVision
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7786955686273138205, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
-      propertyPath: mascaraSuelo.m_Bits
-      value: 16384
-      objectReference: {fileID: 0}
-    - target: {fileID: 7786955686273138205, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
       propertyPath: objetivos.Array.data[0]
       value: 
       objectReference: {fileID: 62510027}
@@ -781,17 +773,21 @@ PrefabInstance:
       propertyPath: objetivos.Array.data[1]
       value: 
       objectReference: {fileID: 611978366}
+    - target: {fileID: 7786955686273138205, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
+      propertyPath: desplazamientoInicialCompletado
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7786955686273138207, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7786955686273138207, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.24
+      value: 8.47
       objectReference: {fileID: 0}
     - target: {fileID: 7786955686273138207, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.63
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 7786955686273138207, guid: 7170da078101c47478eb26f9c87f4f5b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1294,14 +1290,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 371873631}
     - target: {fileID: 874450408819303813, guid: 9b2695b2bc3879747b12b083a765f327, type: 3}
-      propertyPath: distanciaVision
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 874450408819303813, guid: 9b2695b2bc3879747b12b083a765f327, type: 3}
-      propertyPath: mascaraSuelo.m_Bits
-      value: 16384
-      objectReference: {fileID: 0}
-    - target: {fileID: 874450408819303813, guid: 9b2695b2bc3879747b12b083a765f327, type: 3}
       propertyPath: objetivos.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1317,6 +1305,10 @@ PrefabInstance:
       propertyPath: objetivos.Array.data[2]
       value: 
       objectReference: {fileID: 62510027}
+    - target: {fileID: 874450408819303813, guid: 9b2695b2bc3879747b12b083a765f327, type: 3}
+      propertyPath: desplazamientoInicialCompletado
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2695b2bc3879747b12b083a765f327, type: 3}
 --- !u!1 &1648858811
@@ -1453,11 +1445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2246498045196403397, guid: 4d75a655d4a265145bac2d7722de41aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.26
+      value: 4.31
       objectReference: {fileID: 0}
     - target: {fileID: 2246498045196403397, guid: 4d75a655d4a265145bac2d7722de41aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.81
+      value: -0.57
       objectReference: {fileID: 0}
     - target: {fileID: 2246498045196403397, guid: 4d75a655d4a265145bac2d7722de41aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1515,6 +1507,10 @@ PrefabInstance:
       propertyPath: objetivos.Array.data[1]
       value: 
       objectReference: {fileID: 611978366}
+    - target: {fileID: 7797507062554747953, guid: 4d75a655d4a265145bac2d7722de41aa, type: 3}
+      propertyPath: desplazamientoInicialCompletado
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8380984454542415231, guid: 4d75a655d4a265145bac2d7722de41aa, type: 3}
       propertyPath: m_BodyType
       value: 0
@@ -1628,6 +1624,10 @@ PrefabInstance:
       propertyPath: objetivos.Array.data[1]
       value: 
       objectReference: {fileID: 611978366}
+    - target: {fileID: 4873381124617334422, guid: e140348162c9de7409cdfcd501315394, type: 3}
+      propertyPath: desplazamientoInicialCompletado
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e140348162c9de7409cdfcd501315394, type: 3}
 --- !u!1 &1750478920

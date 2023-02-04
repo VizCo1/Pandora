@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.8409951, b: 0.23137254, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b37c89944c57c684ab345deaac6fa4ee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84efc49f2ce73b40a6ef9709693fc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suelo: {fileID: 0}
   movementController2D: {fileID: 810012154630617797}
   objetivos:
   - {fileID: 0}
@@ -106,10 +107,11 @@ MonoBehaviour:
   vida: 100
   ataque: 20
   velocidad: 0.01
-  distanciaVision: 8
-  suelo:
+  distanciaVision: 4
+  mascaraSuelo:
     serializedVersion: 2
     m_Bits: 16384
+  desplazamientoInicialCompletado: 0
   bala: {fileID: 3221827737678058155, guid: 48fec92af0b5fca49bdd157014513736, type: 3}
   posDisparo: {fileID: 5299914571116928326}
 --- !u!114 &810012154630617797

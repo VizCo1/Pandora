@@ -43,7 +43,7 @@ public class Enemigo : MonoBehaviour
         
     }
 
-    protected bool desplazamientoInicialCompletado = false;
+    [SerializeField] protected bool desplazamientoInicialCompletado = false;
     protected virtual void Update()
     {
         if (!desplazamientoInicialCompletado)
