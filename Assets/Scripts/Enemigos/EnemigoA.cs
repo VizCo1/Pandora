@@ -15,12 +15,30 @@ public class EnemigoA : Enemigo
 
         if (desplazamientoInicialCompletado)
         {
-            if (jugadorObjetivo == 0 && distanciaJugador1 >= distanciaVision)        
-                Patrullar();        
-            else if (jugadorObjetivo == 1 && distanciaJugador2 >= distanciaVision)        
-                Patrullar();       
+            if (jugadorObjetivo == 0 && distanciaJugador1 >= distanciaVision)
+            {
+                Patrullar();
+                Vector2 direccion = transform.position - walkPoint;
+                direccion.Normalize();
+                anim.SetFloat("DireccionX", direccion.x);
+                anim.SetFloat("DireccionY", direccion.y);
+            }    
+            else if (jugadorObjetivo == 1 && distanciaJugador2 >= distanciaVision)
+            {
+                Patrullar();
+                Vector2 direccion = transform.position - walkPoint;
+                direccion.Normalize();
+                anim.SetFloat("DireccionX", direccion.x);
+                anim.SetFloat("DireccionY", direccion.y);
+            }
             else
+            {
                 MoverA(objetivos[jugadorObjetivo].position);
+                Vector2 direccion = transform.position - objetivos[jugadorObjetivo].position;
+                direccion.Normalize();
+                anim.SetFloat("DireccionX", direccion.x);
+                anim.SetFloat("DireccionY", direccion.y);
+            }
         }
     }
 }

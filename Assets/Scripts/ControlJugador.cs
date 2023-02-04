@@ -69,7 +69,7 @@ public class ControlJugador : MonoBehaviour
         attackParticles.Play();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (canMove)
         {
@@ -103,12 +103,12 @@ public class ControlJugador : MonoBehaviour
             if(playerStats.velocidad < 0.2f)
             {
                 rb.velocity = Vector2.Lerp(rb.velocity * 0.2f,
-                move * velocidad * Time.deltaTime, smoothing);
+                move * velocidad, smoothing);
             }
             else
             {
                 rb.velocity = Vector2.Lerp(rb.velocity * playerStats.velocidad * 1.2f,
-                move * velocidad * Time.deltaTime, smoothing);
+                move * velocidad, smoothing);
             }
             
         }

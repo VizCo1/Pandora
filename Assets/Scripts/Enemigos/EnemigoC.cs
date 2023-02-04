@@ -11,8 +11,6 @@ public class EnemigoC : Enemigo
     bool puedeEmbestir = true;
     bool embestidaPreparada = false;
 
-    float tiempo = 0;
-    float tiempoPreparacion = 2f;
 
     override protected void Start()
     {
@@ -26,17 +24,13 @@ public class EnemigoC : Enemigo
 
         if (desplazamientoInicialCompletado)
         {
-            if (tiempo != 0 || embestidaPreparada)
+            if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision && puedeEmbestir)
             {
-                Embestir();
-            }
-            else if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision && puedeEmbestir)
-            {
-                Embestir();
+                PrepararEmbestida();
             }
             else if (distanciaJugador2 < distanciaVision && puedeEmbestir)
             {
-                Embestir();
+                PrepararEmbestida();
             }
             else
                 Patrullar();
@@ -44,30 +38,25 @@ public class EnemigoC : Enemigo
 
     }
 
-    void Embestir()
+    private void PrepararEmbestida()
     {
-        if (embestidaPreparada)
+        if (!embestidaPreparada)
         {
-            Vector2 direccion = objetivos[jugadorObjetivo].position - transform.position;
-            direccion /= direccion.magnitude;
-
-            puedeEmbestir = false;
-
-            rb.velocity = direccion * 20;
-
-            embestidaPreparada = false;
-
-            StartCoroutine(ResetEmbestida());
+            anim.SetTrigger("Embestida");
         }
-        else
-        {
-            tiempo += Time.deltaTime;
-            if (tiempo >= tiempoPreparacion)
-            {
-                tiempo = 0;
-                embestidaPreparada = true;
-            }
-        }
+    }
+    public void Embestir()
+    {
+        Vector2 direccion = objetivos[jugadorObjetivo].position - transform.position;
+        direccion /= direccion.magnitude;
+
+        puedeEmbestir = false;
+
+        rb.velocity = direccion * 20;
+
+        embestidaPreparada = false;
+
+        StartCoroutine(ResetEmbestida());  
     }
 
     IEnumerator ResetEmbestida()

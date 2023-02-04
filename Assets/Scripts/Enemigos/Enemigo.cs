@@ -22,7 +22,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] protected float distanciaVision;
 
     protected bool walkPointSet = false;
-    protected private Vector3 walkPoint;
+    protected Vector3 walkPoint;
     [SerializeField] protected LayerMask mascaraSuelo;
 
     protected float distanciaJugador1;
@@ -31,8 +31,11 @@ public class Enemigo : MonoBehaviour
 
     Vector2 posFuturaInicial;
 
+    protected Animator anim;
+
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         posFuturaInicial = new Vector2(Random.Range(suelo.GetChild(0).position.x, suelo.GetChild(1).position.x),
                                        Random.Range(suelo.GetChild(1).position.y, suelo.GetChild(0).position.y));
     }

@@ -24,18 +24,24 @@ public class EnemigoD : Enemigo
             if (jugadorObjetivo == 0 && distanciaJugador1 < distanciaVision)
             {
                 if (puedeDisparar)
-                    LanzarProyectiles();
+                    Ataque();
             }
             else if (distanciaJugador2 < distanciaVision)
             {         
                 if (puedeDisparar)        
-                    LanzarProyectiles();
+                    Ataque();
             }
         }
 
     }
 
-    private void LanzarProyectiles()
+    void Ataque()
+    {
+        anim.SetTrigger("Ataque");
+        puedeDisparar = false;
+    } 
+
+    public void LanzarProyectiles()
     {
         Vector2 direccion = objetivos[jugadorObjetivo].position - transform.position;
         direccion /= direccion.magnitude;
@@ -45,8 +51,6 @@ public class EnemigoD : Enemigo
         {
             contenedorDeProyectiles.transform.GetChild(i).GetComponent<Rigidbody2D>().velocity = direcciones[i] * 15;
         }
-
-        puedeDisparar = false;
 
         StartCoroutine(ResetDisparo(contenedorDeProyectiles));
     }

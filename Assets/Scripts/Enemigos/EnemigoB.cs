@@ -25,7 +25,7 @@ public class EnemigoB : Enemigo
             else if (distanciaJugador2 < distanciaVision)
                 EvitarJugador(objetivos[jugadorObjetivo].position);
             else if (puedeDisparar)
-                LanzarProyectil();
+                Ataque();
         }
 
     }
@@ -63,7 +63,15 @@ public class EnemigoB : Enemigo
         }
     }
 
-    private void LanzarProyectil()
+    private void Ataque()
+    {
+        anim.SetTrigger("Ataque");
+
+        puedeDisparar = false;
+
+    }
+
+    public void LanzarProyectil()
     {
         Vector2 direccion = objetivos[jugadorObjetivo].position - transform.position;
         direccion /= direccion.magnitude;
@@ -71,10 +79,8 @@ public class EnemigoB : Enemigo
         GameObject proyectil = Instantiate(bala, posDisparo.position, Quaternion.identity);
         proyectil.GetComponent<Rigidbody2D>().velocity = direccion * 10;
 
-        puedeDisparar = false;
 
         StartCoroutine(DestruirBala(proyectil));
-
     }
 
     IEnumerator DestruirBala(GameObject bala)
