@@ -370,7 +370,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a23d2135-85eb-4942-8ef3-0d918b2c56bb
     m_ActionName: Stats/Intercambio_velocidad[/Keyboard/f,/SwitchProControllerHID/dpad/right]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Jugador2
   m_DefaultActionMap: Stats
   m_SplitScreenIndex: -1
@@ -642,7 +642,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a23d2135-85eb-4942-8ef3-0d918b2c56bb
     m_ActionName: Stats/Intercambio_velocidad[/Keyboard/f,/SwitchProControllerHID/dpad/right]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Jugador1
   m_DefaultActionMap: Stats
   m_SplitScreenIndex: -1

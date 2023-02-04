@@ -58,6 +58,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ef58109d-cfd3-43ba-a0ed-b0366e74af0b",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador2",
+                    "action": "Intercambio_ataque",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "cb90997b-fcaa-4e55-8971-809a3f28e6af",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -80,6 +91,17 @@
                 },
                 {
                     "name": "",
+                    "id": "cd438bbb-dd46-4ade-8842-3f34293962b7",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador2",
+                    "action": "Intercambio_defensa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "931760fb-5f5a-47b5-b6dc-317b6ee87feb",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -93,6 +115,17 @@
                     "name": "",
                     "id": "3420082c-5079-41a9-afc3-c7821527cd9c",
                     "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Jugador2",
+                    "action": "Intercambio_velocidad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e0e138d-f618-4bcd-a817-bcfb53ae5ba9",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "Jugador2",

@@ -45,7 +45,8 @@ public class StatsManager : MonoBehaviour
 
     private bool exchangingStats;
 
-    private int statExchangeType = 0;
+    private int statExchangeTypeP1 = 0;
+    private int statExchangeTypeP2 = 0;
 
     private bool exchangingP1;
     private bool exchangingP2;
@@ -69,9 +70,9 @@ public class StatsManager : MonoBehaviour
         if(exchangingStats)
         {
             if(exchangingP1)
-                IntercambiarStatParaJ1(statExchangeType);
+                IntercambiarStatParaJ1(statExchangeTypeP1);
             if(exchangingP2)
-                IntercambiarStatParaJ2(statExchangeType);
+                IntercambiarStatParaJ2(statExchangeTypeP2);
         }
 
     }
@@ -82,7 +83,7 @@ public class StatsManager : MonoBehaviour
         {
             exchangingStats = true;
             exchangingP1 = true;
-            statExchangeType = (int)TipoStat.Ataque;
+            statExchangeTypeP1 = (int)TipoStat.Ataque;
         }
         else if(context.canceled)
         {
@@ -98,7 +99,7 @@ public class StatsManager : MonoBehaviour
         {
             exchangingStats = true;
             exchangingP2 = true;
-            statExchangeType = (int)TipoStat.Ataque;
+            statExchangeTypeP2 = (int)TipoStat.Ataque;
         }
         else if (context.canceled)
         {
@@ -114,7 +115,7 @@ public class StatsManager : MonoBehaviour
         {
             exchangingStats = true;
             exchangingP1 = true;
-            statExchangeType = (int)TipoStat.Defensa;
+            statExchangeTypeP1 = (int)TipoStat.Defensa;
         }
         else if (context.canceled)
         {
@@ -130,7 +131,7 @@ public class StatsManager : MonoBehaviour
         {
             exchangingStats = true;
             exchangingP2 = true;
-            statExchangeType = (int)TipoStat.Defensa;
+            statExchangeTypeP2 = (int)TipoStat.Defensa;
         }
         else if (context.canceled)
         {
@@ -146,7 +147,7 @@ public class StatsManager : MonoBehaviour
         {
             exchangingStats = true;
             exchangingP1 = true;
-            statExchangeType = (int)TipoStat.Velocidad;
+            statExchangeTypeP1 = (int)TipoStat.Velocidad;
         }
         else if (context.canceled)
         {
@@ -162,7 +163,7 @@ public class StatsManager : MonoBehaviour
         {
             exchangingStats = true;
             exchangingP2 = true;
-            statExchangeType = (int)TipoStat.Velocidad;
+            statExchangeTypeP2 = (int)TipoStat.Velocidad;
         }
         else if (context.canceled)
         {
