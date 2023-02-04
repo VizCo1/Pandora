@@ -15,6 +15,9 @@ public class Stats
    
     [Range(0, 1)]
     public float velocidad;
+
+    [Range (0, 100)]
+    public float humanLife;
 }
 
 public enum TipoStat
@@ -27,12 +30,14 @@ public class StatsManager : MonoBehaviour
 {
     public Stats statsJugador1; // Objeto principal para los stats del jugador
     [SerializeField] private GameObject statsUI1;
+    [SerializeField] private Slider humanHealth1Slider;
     private Slider ataqueJ1;
     private Slider defensaJ1;
     private Slider velocidadJ1;
 
     public Stats statsJugador2;
     [SerializeField] private GameObject statsUI2;
+    [SerializeField] private Slider humanHealth2Slider;
     private Slider ataqueJ2;
     private Slider defensaJ2;
     private Slider velocidadJ2;
@@ -65,10 +70,16 @@ public class StatsManager : MonoBehaviour
 
         if(exchangingStats)
         {
-            if(exchangingP1)
+            if (exchangingP1) 
+            {
                 IntercambiarStatParaJ1(statExchangeTypeP1);
-            if(exchangingP2)
+                statsJugador1.humanLife -= velocidadReduccion * 5 * Time.deltaTime;
+            }
+            if (exchangingP2) 
+            {
                 IntercambiarStatParaJ2(statExchangeTypeP2);
+                statsJugador2.humanLife -= velocidadReduccion * 5 * Time.deltaTime;
+            }
         }
 
     }
@@ -255,6 +266,7 @@ public class StatsManager : MonoBehaviour
         ActualizarDefensa2();
         ActualizarVelocidad1();
         ActualizarVelocidad2();
+        ActualizarVida();   
     }
     private void ActualizarAtaque1()
     {
@@ -284,6 +296,12 @@ public class StatsManager : MonoBehaviour
     private void ActualizarVelocidad2()
     {
         velocidadJ2.value = statsJugador2.velocidad;
+    }
+
+    private void ActualizarVida()
+    {
+        humanHealth1Slider.value = statsJugador1.humanLife / 100;
+        humanHealth2Slider.value = statsJugador2.humanLife / 100;
     }
 }
 

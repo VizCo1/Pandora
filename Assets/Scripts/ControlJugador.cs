@@ -100,7 +100,17 @@ public class ControlJugador : MonoBehaviour
                 anim.SetBool("moving", false);
             }
 
-            rb.velocity = Vector2.Lerp(rb.velocity * playerStats.velocidad, move * velocidad * Time.deltaTime, smoothing);
+            if(playerStats.velocidad < 0.2f)
+            {
+                rb.velocity = Vector2.Lerp(rb.velocity * 0.2f,
+                move * velocidad * Time.deltaTime, smoothing);
+            }
+            else
+            {
+                rb.velocity = Vector2.Lerp(rb.velocity * playerStats.velocidad * 1.2f,
+                move * velocidad * Time.deltaTime, smoothing);
+            }
+            
         }
     }
 }
