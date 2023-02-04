@@ -25,11 +25,6 @@ public class Enemigo : MonoBehaviour
         movementController2D.SetSpeed(velocidad); 
     }
 
-    void Update()
-    {
-        MoverA(objetivo.position);
-        Patrullar();
-    }
 
     protected virtual void MoverA(Vector3 pos)
     {
@@ -84,6 +79,7 @@ public class Enemigo : MonoBehaviour
                 break;
 
             default:
+
                 break;
         }
     }
