@@ -1,36 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
 public class ControlJugador : MonoBehaviour
 {
-    public float velocidad = 10f;
-    private Rigidbody2D rb;
-    private Animator anim;
     
+    private Animator anim;
+    private CharacterController control;
 
-    void Start()
+    [SerializeField]
+    private float velocidad = 5.0f;
+
+    private Vector3 playerVelocity;
+    
+    private Vector2 movimientoInput = Vector2.zero;
+
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        control = gameObject.GetComponent<CharacterController>();
+    }
+
+    public void EnMovimiento(InputAction.CallbackContext context)
+    {
+        Debug.Log("Moviendo");
+        movimientoInput = context.ReadValue<Vector2>();
+
     }
 
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector2(horizontal * velocidad, vertical * velocidad);
+        Vector3 move = new Vector3(movimientoInput.x, 0, movimientoInput.y);
+        control.Move(move * Time.deltaTime* velocidad);
+        if (move != Vector3.zero)
+        {
+            gameObject.transform.forward = move;
+        }
 
-        if (horizontal != 0 || vertical != 0)
-        {
-            anim.SetFloat("movimiento_x", horizontal);
-            anim.SetFloat("movimiento_y", vertical);
-            anim.SetBool("moviendo", true);
-        }
-        else
-        {
-            anim.SetBool("moviendo", false);
-        }
+        control.Move(playerVelocity * Time.deltaTime);
+
     }
 }
