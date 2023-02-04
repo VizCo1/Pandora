@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8532111055780048408, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
       propertyPath: m_Name
-      value: Player1 - Sprite (1)
+      value: Player 2
       objectReference: {fileID: 0}
     - target: {fileID: 8532111055780048411, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
       propertyPath: m_Pivot.x
