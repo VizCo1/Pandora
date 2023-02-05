@@ -39,7 +39,7 @@ public class PlayerLife : MonoBehaviour
 
             canSound = false;
 
-            Invoke("CanPlaySound", 1f);
+            Invoke("CanPlaySound", 0.75f);
 
             health -= 5f - playerStats.defensa * 3;
 
@@ -92,6 +92,13 @@ public class PlayerLife : MonoBehaviour
             Debug.Log("PlayerHit");
 
             health -= 5f - playerStats.defensa * 3;
+
+            if (canSound)
+                audioSource.Play();
+
+            canSound = false;
+
+            Invoke("CanPlaySound", 0.75f);
 
             playerStats.humanLife = health;
 
