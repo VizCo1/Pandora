@@ -89,9 +89,15 @@ public class StatsManager : MonoBehaviour
         velocidadJ2Slider = statsUI2.transform.GetChild(2).GetComponent<Slider>();
     }
 
+    private void Start()
+    {
+        ActualizarUI();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(exchangingStats);
         if(exchangingStats) // changes when input is detected
         {
             if (exchangingP1) 
@@ -104,6 +110,7 @@ public class StatsManager : MonoBehaviour
                 IntercambiarStatParaJ2(statExchangeTypeP2);
                 statsJugador2.humanLife -= velocidadReduccion * 5 * Time.deltaTime;
             }
+            ActualizarUI();
         }
         else
         {
@@ -124,7 +131,7 @@ public class StatsManager : MonoBehaviour
     #region InputHandlers
     public void BotonAtaquePulsadoJ1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP1)
         {
             exchangingStats = true;
             exchangingP1 = true;
@@ -133,14 +140,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP1 = false;
-            exchangingStats = false;
+            if(!exchangingP2)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonAtaquePulsadoJ2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP2)
         {
             exchangingStats = true;
             exchangingP2 = true;
@@ -149,14 +157,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP2 = false;
-            exchangingStats = false;
+            if (!exchangingP1)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonDefensaPulsadoJ1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP1)
         {
             exchangingStats = true;
             exchangingP1 = true;
@@ -165,14 +174,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP1 = false;
-            exchangingStats = false;
+            if (!exchangingP2)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonDefensaPulsadoJ2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP2)
         {
             exchangingStats = true;
             exchangingP2 = true;
@@ -181,14 +191,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP2 = false;
-            exchangingStats = false;
+            if (!exchangingP1)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonVelocidadPulsadoJ1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP1)
         {
             exchangingStats = true;
             exchangingP1 = true;
@@ -196,15 +207,16 @@ public class StatsManager : MonoBehaviour
         }
         else if (context.canceled)
         {
-            exchangingStats = false;
             exchangingP1 = false;
+            if (!exchangingP2)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonVelocidadPulsadoJ2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP2)
         {
             exchangingStats = true;
             exchangingP2 = true;
@@ -212,8 +224,9 @@ public class StatsManager : MonoBehaviour
         }
         else if (context.canceled)
         {
-            exchangingStats = false;
             exchangingP2 = false;
+            if (!exchangingP1)
+                exchangingStats = false;
         }
 
     } 
@@ -286,7 +299,7 @@ public class StatsManager : MonoBehaviour
         stat -= velocidadReduccion * Time.deltaTime;
         stat = Mathf.Clamp01(stat);
 
-        ActualizarUI();
+       // ActualizarUI();
     }
 
     private void IncreaseStat(ref float stat)
@@ -294,7 +307,7 @@ public class StatsManager : MonoBehaviour
         stat += velocidadReduccion * Time.deltaTime;
         stat = Mathf.Clamp01(stat);
 
-        ActualizarUI();
+       // ActualizarUI();
     }
 
 

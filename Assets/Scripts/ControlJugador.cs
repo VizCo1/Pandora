@@ -84,7 +84,7 @@ public class ControlJugador : MonoBehaviour
                 anim.SetFloat("moveX", move.x);
                 anim.SetFloat("moveY", move.y);
 
-                anim.SetBool("moving", true);
+                
 
                 if (move.x > 0)
                 {
@@ -95,12 +95,10 @@ public class ControlJugador : MonoBehaviour
                     sr.flipX = false;
                 }
             }
-            else
-            {
-                anim.SetBool("moving", false);
-            }
 
-            if(playerStats.velocidad < 0.2f)
+            anim.SetBool("moving", move != Vector3.zero);
+
+            if (playerStats.velocidad < 0.2f)
             {
                 rb.velocity = Vector2.Lerp(rb.velocity * 0.2f,
                 move * velocidad, smoothing);

@@ -36,6 +36,10 @@ public class PlayerDamager : MonoBehaviour
                 Destroy(damagedParticles, 2f);
                 Destroy(particlesGO, 2f);
 
+                // Enemy Health
+                EnemyLife enemyLife = collision.GetComponent<EnemyLife>();
+                enemyLife.HurtEnemy((1.2f + playerStats.ataque) * 25);
+
                 Vector2 forceDirection = enemyRb.transform.position - transform.position;
 
                 forceDirection = forceDirection.normalized * kockBack;
