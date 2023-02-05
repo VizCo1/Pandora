@@ -34,12 +34,8 @@ public class PlayerLife : MonoBehaviour
 
             Debug.Log("PlayerHit");
 
-            if (canSound)
+            if (!audioSource.isPlaying)
                 audioSource.Play();
-
-            canSound = false;
-
-            Invoke("CanPlaySound", 1f);
 
             health -= 5f - playerStats.defensa * 3;
 
@@ -93,6 +89,9 @@ public class PlayerLife : MonoBehaviour
 
             health -= 5f - playerStats.defensa * 3;
 
+            if (!audioSource.isPlaying)
+                audioSource.Play();
+
             playerStats.humanLife = health;
 
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -141,10 +140,5 @@ public class PlayerLife : MonoBehaviour
                     SceneManager.LoadScene(playerNumber + 1);
             }
         }
-    }
-
-    void CanPlaySound()
-    {
-        canSound = true;
     }
 }
