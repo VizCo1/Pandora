@@ -12,6 +12,7 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private ParticleSystem attackParticles;
+    [SerializeField] private AudioSource attackSource;
 
     [SerializeField]
     private float velocidad = 5.0f;
@@ -54,6 +55,7 @@ public class ControlJugador : MonoBehaviour
             rb.velocity *= 0.5f;
             anim.SetTrigger("attack");
             attackParticles.Play();
+            attackSource.Play();
 
             Invoke(nameof(StopAttackParticles), 0.2f);
         }

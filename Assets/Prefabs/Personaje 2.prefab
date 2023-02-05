@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6987959858152456919}
   - component: {fileID: 3831771122708194651}
   - component: {fileID: 1032249136}
+  - component: {fileID: 1032249137}
   m_Layer: 0
   m_Name: RightHB
   m_TagString: Damager
@@ -80,6 +81,27 @@ MonoBehaviour:
   playerNumber: 0
   kockBack: 18
   hitParticleSystem: {fileID: 0}
+--- !u!50 &1032249137
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66875545124989248}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &364538551608746932
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +113,7 @@ GameObject:
   - component: {fileID: 5230225205162361682}
   - component: {fileID: 4973134092565344339}
   - component: {fileID: 1588814998}
+  - component: {fileID: 1588814999}
   m_Layer: 0
   m_Name: UpHB
   m_TagString: Damager
@@ -160,6 +183,27 @@ MonoBehaviour:
   playerNumber: 0
   kockBack: 18
   hitParticleSystem: {fileID: 0}
+--- !u!50 &1588814999
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364538551608746932}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1101430220837015837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5034,7 @@ GameObject:
   - component: {fileID: 6627282102997319126}
   - component: {fileID: 48534000651128870}
   - component: {fileID: 7262771491222392707}
+  - component: {fileID: 5434296829207803156}
   m_Layer: 0
   m_Name: Personaje 2
   m_TagString: Player
@@ -5086,6 +5131,7 @@ MonoBehaviour:
   rb: {fileID: 6627282102997319128}
   sr: {fileID: 6350032014440660703}
   attackParticles: {fileID: 4989260317338494095}
+  attackSource: {fileID: 5434296829207803156}
   velocidad: 20
   smoothing: 0.2
 --- !u!95 &1394216951161500691
@@ -5153,7 +5199,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.76, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &6627282102997319126
 MonoBehaviour:
@@ -5278,11 +5324,11 @@ AudioSource:
   m_GameObject: {fileID: 2434950467130775301}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 70979da915e00b243a1b840dc470e969, type: 3}
+  OutputAudioMixerGroup: {fileID: 1018359661129839273, guid: 24ec06322f013f34da1738c5d8dfd1c8, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b26c6763c448eb84c8a23d7f044beb0e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.029
+  m_Pitch: 2.05
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -5382,6 +5428,102 @@ MonoBehaviour:
   knockback: 10
   hitParticleSystem: {fileID: 0}
   audioSource: {fileID: 48534000651128870}
+--- !u!82 &5434296829207803156
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2434950467130775301}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1018359661129839273, guid: 24ec06322f013f34da1738c5d8dfd1c8, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 91050ee72066e5243aa9b9b7141e1e18, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6138252958100339242
 GameObject:
   m_ObjectHideFlags: 0
@@ -10206,6 +10348,7 @@ GameObject:
   - component: {fileID: 6855224125982929295}
   - component: {fileID: 8722974726876820360}
   - component: {fileID: 17631730}
+  - component: {fileID: 17631731}
   m_Layer: 0
   m_Name: DownHitbox
   m_TagString: Damager
@@ -10275,6 +10418,27 @@ MonoBehaviour:
   playerNumber: 0
   kockBack: 20
   hitParticleSystem: {fileID: 0}
+--- !u!50 &17631731
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480284944001960098}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8253468940209233046
 GameObject:
   m_ObjectHideFlags: 0
@@ -10286,6 +10450,7 @@ GameObject:
   - component: {fileID: 8194808090773347407}
   - component: {fileID: 492972718723637804}
   - component: {fileID: 708475374}
+  - component: {fileID: 708475375}
   m_Layer: 0
   m_Name: LeftHB
   m_TagString: Damager
@@ -10355,3 +10520,24 @@ MonoBehaviour:
   playerNumber: 0
   kockBack: 18
   hitParticleSystem: {fileID: 0}
+--- !u!50 &708475375
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253468940209233046}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
