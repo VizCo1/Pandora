@@ -18,6 +18,10 @@ public class PlayerLife : MonoBehaviour
 
     public GameObject hitParticleSystem;
 
+    [SerializeField] AudioSource audioSource;
+
+    bool canSound = true;
+
     private void Start()
     {
         playerStats = playerNumber == 0 ? StatsManager.instance.statsJugador1 : StatsManager.instance.statsJugador2;
@@ -29,6 +33,13 @@ public class PlayerLife : MonoBehaviour
         {
 
             Debug.Log("PlayerHit");
+
+            if (canSound)
+                audioSource.Play();
+
+            canSound = false;
+
+            Invoke("CanPlaySound", 1f);
 
             health -= 5f - playerStats.defensa * 3;
 
@@ -51,11 +62,11 @@ public class PlayerLife : MonoBehaviour
 
                 if (playerStats.velocidad < 0.3f)
                 {
-                    forceDirection = forceDirection.normalized * knockback * (knockback * 0.3f + 1.2f);
+                    forceDirection = (knockback * 0.3f + 1.2f) * knockback * forceDirection.normalized;
                 }
                 else
                 {
-                    forceDirection = forceDirection.normalized * knockback * (knockback * playerStats.velocidad + 1.2f);
+                    forceDirection = (knockback * playerStats.velocidad + 1.2f) * knockback * forceDirection.normalized;
                 }
                 rb.AddForce(forceDirection, ForceMode2D.Impulse);
 
@@ -130,5 +141,10 @@ public class PlayerLife : MonoBehaviour
                     SceneManager.LoadScene(playerNumber + 1);
             }
         }
+    }
+
+    void CanPlaySound()
+    {
+        canSound = true;
     }
 }
