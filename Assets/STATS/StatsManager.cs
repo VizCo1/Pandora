@@ -67,9 +67,19 @@ public class StatsManager : MonoBehaviour
     private bool exchangingP1;
     private bool exchangingP2;
 
-
+    public static StatsManager instance;
     void Awake()
     {
+
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
         ataqueJ1Slider = statsUI1.transform.GetChild(0).GetComponent<Slider>();
         defensaJ1Slider = statsUI1.transform.GetChild(1).GetComponent<Slider>();
         velocidadJ1Slider = statsUI1.transform.GetChild(2).GetComponent<Slider>();

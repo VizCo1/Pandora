@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6987959858152456919}
   - component: {fileID: 3831771122708194651}
+  - component: {fileID: 1032249136}
   m_Layer: 0
   m_Name: RightHB
-  m_TagString: Untagged
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +65,21 @@ PolygonCollider2D:
       - {x: 0.86292166, y: -0.9011443}
       - {x: 0.879738, y: -0.29892135}
       - {x: -0.13543501, y: -0.15820152}
+--- !u!114 &1032249136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66875545124989248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a82e0dafafe92f479ae64183b294652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  kockBack: 18
+  hitParticleSystem: {fileID: 0}
 --- !u!1 &364538551608746932
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,9 +90,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5230225205162361682}
   - component: {fileID: 4973134092565344339}
+  - component: {fileID: 1588814998}
   m_Layer: 0
   m_Name: UpHB
-  m_TagString: Untagged
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +145,21 @@ PolygonCollider2D:
       - {x: 1.0137458, y: -0.8986566}
       - {x: 0.90919054, y: -0.15506935}
       - {x: -0.18663591, y: -0.4250804}
+--- !u!114 &1588814998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364538551608746932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a82e0dafafe92f479ae64183b294652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  kockBack: 18
+  hitParticleSystem: {fileID: 0}
 --- !u!1 &1101430220837015837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4958,7 +4990,7 @@ GameObject:
   - component: {fileID: 6627282102997319126}
   m_Layer: 0
   m_Name: Personaje 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5047,10 +5079,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd148131b515a524db45fbf513085975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statManager: {fileID: 0}
+  playerNumber: 1
   rb: {fileID: 6627282102997319128}
   sr: {fileID: 6350032014440660703}
   attackParticles: {fileID: 4989260317338494095}
-  velocidad: 10
+  velocidad: 20
   smoothing: 0.2
 --- !u!95 &1394216951161500691
 Animator:
@@ -5180,6 +5214,54 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 56cb818c-12eb-47f1-af5a-e7f295caa4ff
     m_ActionName: Player/Esquiva[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: BotonAtaquePulsadoJ2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1e1916f2-1acc-4500-9764-cd811d0178ab
+    m_ActionName: Player/Intercambio_ataque[/SwitchProControllerHID/dpad/left,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: BotonDefensaPulsadoJ2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d167bb14-151d-488f-9098-e39ea67aaf90
+    m_ActionName: Player/Intercambio_defensa[/Keyboard/e,/SwitchProControllerHID/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: BotonVelocidadPulsadoJ2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd4cb8ab-c772-4ec8-80d6-83e570885f0d
+    m_ActionName: Player/Intercambio_velocidad[/Keyboard/f,/SwitchProControllerHID/dpad/right]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Mando
   m_DefaultActionMap: Player
@@ -10008,9 +10090,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6855224125982929295}
   - component: {fileID: 8722974726876820360}
+  - component: {fileID: 17631730}
   m_Layer: 0
   m_Name: DownHitbox
-  m_TagString: Untagged
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10062,6 +10145,21 @@ PolygonCollider2D:
       - {x: 1.0137458, y: -0.8986566}
       - {x: 0.94181305, y: -0.33993033}
       - {x: -0.20838428, y: -0.52294797}
+--- !u!114 &17631730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480284944001960098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a82e0dafafe92f479ae64183b294652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  kockBack: 20
+  hitParticleSystem: {fileID: 0}
 --- !u!1 &8253468940209233046
 GameObject:
   m_ObjectHideFlags: 0
@@ -10072,9 +10170,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8194808090773347407}
   - component: {fileID: 492972718723637804}
+  - component: {fileID: 708475374}
   m_Layer: 0
   m_Name: LeftHB
-  m_TagString: Untagged
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10126,3 +10225,18 @@ PolygonCollider2D:
       - {x: 0.94991505, y: -0.7162834}
       - {x: 0.86886376, y: -0.1575571}
       - {x: -0.13543501, y: -0.15820152}
+--- !u!114 &708475374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253468940209233046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a82e0dafafe92f479ae64183b294652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumber: 0
+  kockBack: 18
+  hitParticleSystem: {fileID: 0}
