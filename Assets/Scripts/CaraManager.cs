@@ -8,6 +8,7 @@ public class CaraManager : MonoBehaviour
 {
     [SerializeField] int player;
     [SerializeField] Sprite[] imagenes = new Sprite[2];
+    [SerializeField] AudioSource audioSource;
     Image image;
     float humanLife;
     float vidaParaCambiar = 66f;
@@ -35,6 +36,7 @@ public class CaraManager : MonoBehaviour
             if (humanLife <= vidaParaCambiar)
             {
                 CambiarImagen(indice++);
+                audioSource.Play();
                 fuerza = new Vector2(fuerza.x + 1.25f, fuerza.y);
                 vibrato++;
                 transform.DOShakePosition(5f, fuerza, vibrato, 90, false, false).SetLoops(-1);

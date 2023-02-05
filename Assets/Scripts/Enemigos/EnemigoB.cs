@@ -73,6 +73,9 @@ public class EnemigoB : Enemigo
 
     public void LanzarProyectil()
     {
+        if (!audioSource.isPlaying)
+            audioSource.Play();
+
         Vector2 direccion = objetivos[jugadorObjetivo].position - transform.position;
         direccion /= direccion.magnitude;
 

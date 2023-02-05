@@ -55,7 +55,7 @@ public class ControlJugador : MonoBehaviour
             anim.SetTrigger("attack");
             attackParticles.Play();
 
-            Invoke("StopAttackParticles", 0.2f);
+            Invoke(nameof(StopAttackParticles), 0.2f);
         }
     }
 
@@ -107,7 +107,7 @@ public class ControlJugador : MonoBehaviour
             }
             else
             {
-                rb.velocity = Vector2.Lerp(rb.velocity * playerStats.velocidad * 1.2f,
+                rb.velocity = Vector2.Lerp(1.2f * playerStats.velocidad * rb.velocity,
                 move * velocidad, smoothing);
             }
             

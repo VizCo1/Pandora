@@ -52,6 +52,8 @@ public class EnemigoD : Enemigo
 
     void Ataque()
     {
+        if (!audioSource.isPlaying)
+            audioSource.Play();
         anim.SetTrigger("Ataque");
         puedeDisparar = false;
     } 

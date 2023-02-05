@@ -62,6 +62,9 @@ public class EnemigoC : Enemigo
     {
         if (!embestidaPreparada)
         {
+            puedeEmbestir = false;
+            if (!audioSource.isPlaying)
+                audioSource.Play();
             anim.SetTrigger("Embestida");
         }
     }
@@ -69,8 +72,6 @@ public class EnemigoC : Enemigo
     {
         Vector2 direccion = objetivos[jugadorObjetivo].position - transform.position;
         direccion /= direccion.magnitude;
-
-        puedeEmbestir = false;
 
         rb.velocity = direccion * 16f;
 
@@ -81,7 +82,7 @@ public class EnemigoC : Enemigo
 
     IEnumerator ResetEmbestida()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(Random.Range(3f, 4));
         puedeEmbestir = true;
         //embestidaPreparada = false;
     }

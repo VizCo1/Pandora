@@ -10,6 +10,8 @@ public class Enemigo : MonoBehaviour
     const string VERDE = "Verde";
     const string AZUL = "Azul";
 
+    [SerializeField] protected AudioSource audioSource;
+    
     [SerializeField] Transform suelo;
 
     [SerializeField] MovementController2D movementController2D;

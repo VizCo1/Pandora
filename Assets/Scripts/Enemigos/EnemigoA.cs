@@ -31,6 +31,8 @@ public class EnemigoA : Enemigo
             }
             else
             {
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
                 MoverA(objetivos[jugadorObjetivo].position);
                 Vector2 direccion = transform.position - objetivos[jugadorObjetivo].position;
                 direccion.Normalize();
