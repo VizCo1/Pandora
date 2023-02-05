@@ -2536,6 +2536,58 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2652772960889203146, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652772960889203146, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1760065f45312cb4386ff908ecb3d308, type: 3}
+    - target: {fileID: 2652772960889203146, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652772960889203146, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652772960889203146, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686701720505807784, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686701720505807784, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: statsManager
+      value: 
+      objectReference: {fileID: 24395249}
+    - target: {fileID: 3686701720505807784, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: imagenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: fefcc320465524743aa120ed05c8af56, type: 3}
+    - target: {fileID: 3686701720505807784, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: imagenes.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: bb23474b823ea2540a15b7fbf82f7adf, type: 3}
+    - target: {fileID: 4712496521527374384, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: player
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712496521527374384, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: statsManager
+      value: 
+      objectReference: {fileID: 24395249}
+    - target: {fileID: 4712496521527374384, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: imagenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 89775f6c62cbabe43a1e796d803bfeee, type: 3}
+    - target: {fileID: 4712496521527374384, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: imagenes.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: ae21241d618b2414f89ce1082d8a17ad, type: 3}
     - target: {fileID: 5960706792253466606, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2667,6 +2719,26 @@ PrefabInstance:
     - target: {fileID: 6241821695892117280, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241821696496052306, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241821696496052306, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d999c107c97ce284f86fb11c7badf886, type: 3}
+    - target: {fileID: 6241821696496052306, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241821696496052306, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241821696496052306, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7735849
       objectReference: {fileID: 0}
     - target: {fileID: 6241821696626161263, guid: a2e2119af9992354fbe9ae81ec6c94d0, type: 3}
       propertyPath: m_AnchorMax.x
