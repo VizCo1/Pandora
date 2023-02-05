@@ -34,7 +34,6 @@ public class GeneradorEnemigos : MonoBehaviour
         }
         else
         {
-            Debug.Log(tiempo);
             tiempo += Time.deltaTime;
             if (tiempo >= tiempoMax)
             {

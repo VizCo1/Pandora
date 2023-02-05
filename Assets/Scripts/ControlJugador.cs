@@ -54,6 +54,8 @@ public class ControlJugador : MonoBehaviour
             rb.velocity *= 0.5f;
             anim.SetTrigger("attack");
             attackParticles.Play();
+
+            Invoke("StopAttackParticles", 0.2f);
         }
     }
 

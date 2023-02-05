@@ -13,7 +13,7 @@ public class PlayerDamager : MonoBehaviour
 
     public GameObject hitParticleSystem;
 
-    private void Awake()
+    private void Start()
     {
         playerStats = playerNumber == 0 ? StatsManager.instance.statsJugador1 : StatsManager.instance.statsJugador2;
     }
@@ -24,14 +24,11 @@ public class PlayerDamager : MonoBehaviour
         {
             Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
 
-           
-
             if (enemyRb != null)
             {
                 // Particles
                 GameObject particlesGO = Instantiate(hitParticleSystem, enemyRb.transform);
                 ParticleSystem damagedParticles = particlesGO.GetComponent<ParticleSystem>();
-                Debug.Log(damagedParticles);
                 damagedParticles.Play();
                 Destroy(damagedParticles, 2f);
                 Destroy(particlesGO, 2f);
@@ -40,6 +37,7 @@ public class PlayerDamager : MonoBehaviour
                 EnemyLife enemyLife = collision.GetComponent<EnemyLife>();
                 enemyLife.HurtEnemy((1.2f + playerStats.ataque) * 25);
 
+                // Force
                 Vector2 forceDirection = enemyRb.transform.position - transform.position;
 
                 forceDirection = forceDirection.normalized * kockBack;

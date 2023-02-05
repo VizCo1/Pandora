@@ -91,13 +91,12 @@ public class StatsManager : MonoBehaviour
 
     private void Start()
     {
-        ActualizarUI();
+        ActualizarUIStart();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(exchangingStats);
         if(exchangingStats) // changes when input is detected
         {
             if (exchangingP1) 
@@ -116,6 +115,7 @@ public class StatsManager : MonoBehaviour
         {
             StopAllParticles();
         }
+        ActualizarVida();
     }
 
     private void StopAllParticles()
@@ -330,6 +330,20 @@ public class StatsManager : MonoBehaviour
             ActualizarVelocidad2();
         }
         ActualizarVida();   
+    }
+
+    private void ActualizarUIStart()
+    {
+        ActualizarAtaque1();
+        ActualizarAtaque2();
+       
+        ActualizarDefensa1();
+        ActualizarDefensa2();
+        
+        ActualizarVelocidad1();
+        ActualizarVelocidad2();
+       
+        ActualizarVida();
     }
     private void ActualizarAtaque1()
     {

@@ -4824,6 +4824,7 @@ GameObject:
   - component: {fileID: 3044745059179077962}
   - component: {fileID: 6714781174617562921}
   - component: {fileID: 381294738}
+  - component: {fileID: 381294739}
   m_Layer: 0
   m_Name: LeftHB
   m_TagString: Damager
@@ -4891,8 +4892,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  kockBack: 18
+  kockBack: 20
   hitParticleSystem: {fileID: 0}
+--- !u!50 &381294739
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986699849011847571}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &4339106587911452071
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,6 +4926,7 @@ GameObject:
   - component: {fileID: 349719396275588234}
   - component: {fileID: 2519463523030371981}
   - component: {fileID: 1699078492}
+  - component: {fileID: 1699078493}
   m_Layer: 0
   m_Name: DownHitbox
   m_TagString: Damager
@@ -4971,8 +4994,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  kockBack: 18
+  kockBack: 20
   hitParticleSystem: {fileID: 0}
+--- !u!50 &1699078493
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339106587911452071}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6102875602965670936
 GameObject:
   m_ObjectHideFlags: 0
@@ -9797,6 +9841,7 @@ GameObject:
   - component: {fileID: 4252222141315530706}
   - component: {fileID: 7986564930388842590}
   - component: {fileID: 1991520406}
+  - component: {fileID: 1991520407}
   m_Layer: 0
   m_Name: RightHB
   m_TagString: Damager
@@ -9864,8 +9909,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  kockBack: 18
+  kockBack: 20
   hitParticleSystem: {fileID: 0}
+--- !u!50 &1991520407
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563225706516550725}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6843162545577483953
 GameObject:
   m_ObjectHideFlags: 0
@@ -9877,6 +9943,7 @@ GameObject:
   - component: {fileID: 1399964078512488023}
   - component: {fileID: 2232882639781072214}
   - component: {fileID: 1453150350}
+  - component: {fileID: 1453150351}
   m_Layer: 0
   m_Name: UpHB
   m_TagString: Damager
@@ -9944,8 +10011,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  kockBack: 18
+  kockBack: 20
   hitParticleSystem: {fileID: 0}
+--- !u!50 &1453150351
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6843162545577483953}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8805235981116779008
 GameObject:
   m_ObjectHideFlags: 0
@@ -9961,6 +10049,7 @@ GameObject:
   - component: {fileID: 830537949}
   - component: {fileID: 830537948}
   - component: {fileID: 830537939}
+  - component: {fileID: 1824973494}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Player
@@ -10110,7 +10199,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10240,3 +10329,34 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1824973494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805235981116779008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8ae1477ca18ca4e86df510af9f5c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  playerNumber: 0
+  knockback: 10
+  hitParticleSystem: {fileID: 0}
+  onPlayerDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
