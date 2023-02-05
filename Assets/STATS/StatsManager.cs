@@ -67,9 +67,19 @@ public class StatsManager : MonoBehaviour
     private bool exchangingP1;
     private bool exchangingP2;
 
-
+    public static StatsManager instance;
     void Awake()
     {
+
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
         ataqueJ1Slider = statsUI1.transform.GetChild(0).GetComponent<Slider>();
         defensaJ1Slider = statsUI1.transform.GetChild(1).GetComponent<Slider>();
         velocidadJ1Slider = statsUI1.transform.GetChild(2).GetComponent<Slider>();
@@ -77,6 +87,11 @@ public class StatsManager : MonoBehaviour
         ataqueJ2Slider = statsUI2.transform.GetChild(0).GetComponent<Slider>();
         defensaJ2Slider = statsUI2.transform.GetChild(1).GetComponent<Slider>();
         velocidadJ2Slider = statsUI2.transform.GetChild(2).GetComponent<Slider>();
+    }
+
+    private void Start()
+    {
+        ActualizarUIStart();
     }
 
     // Update is called once per frame
@@ -94,11 +109,13 @@ public class StatsManager : MonoBehaviour
                 IntercambiarStatParaJ2(statExchangeTypeP2);
                 statsJugador2.humanLife -= velocidadReduccion * 5 * Time.deltaTime;
             }
+            ActualizarUI();
         }
         else
         {
             StopAllParticles();
         }
+        ActualizarVida();
     }
 
     private void StopAllParticles()
@@ -114,7 +131,7 @@ public class StatsManager : MonoBehaviour
     #region InputHandlers
     public void BotonAtaquePulsadoJ1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP1)
         {
             exchangingStats = true;
             exchangingP1 = true;
@@ -123,14 +140,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP1 = false;
-            exchangingStats = false;
+            if(!exchangingP2)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonAtaquePulsadoJ2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP2)
         {
             exchangingStats = true;
             exchangingP2 = true;
@@ -139,14 +157,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP2 = false;
-            exchangingStats = false;
+            if (!exchangingP1)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonDefensaPulsadoJ1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP1)
         {
             exchangingStats = true;
             exchangingP1 = true;
@@ -155,14 +174,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP1 = false;
-            exchangingStats = false;
+            if (!exchangingP2)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonDefensaPulsadoJ2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP2)
         {
             exchangingStats = true;
             exchangingP2 = true;
@@ -171,14 +191,15 @@ public class StatsManager : MonoBehaviour
         else if (context.canceled)
         {
             exchangingP2 = false;
-            exchangingStats = false;
+            if (!exchangingP1)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonVelocidadPulsadoJ1(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP1)
         {
             exchangingStats = true;
             exchangingP1 = true;
@@ -186,15 +207,16 @@ public class StatsManager : MonoBehaviour
         }
         else if (context.canceled)
         {
-            exchangingStats = false;
             exchangingP1 = false;
+            if (!exchangingP2)
+                exchangingStats = false;
         }
 
     }
 
     public void BotonVelocidadPulsadoJ2(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !exchangingP2)
         {
             exchangingStats = true;
             exchangingP2 = true;
@@ -202,8 +224,9 @@ public class StatsManager : MonoBehaviour
         }
         else if (context.canceled)
         {
-            exchangingStats = false;
             exchangingP2 = false;
+            if (!exchangingP1)
+                exchangingStats = false;
         }
 
     } 
@@ -276,7 +299,7 @@ public class StatsManager : MonoBehaviour
         stat -= velocidadReduccion * Time.deltaTime;
         stat = Mathf.Clamp01(stat);
 
-        ActualizarUI();
+       // ActualizarUI();
     }
 
     private void IncreaseStat(ref float stat)
@@ -284,7 +307,7 @@ public class StatsManager : MonoBehaviour
         stat += velocidadReduccion * Time.deltaTime;
         stat = Mathf.Clamp01(stat);
 
-        ActualizarUI();
+       // ActualizarUI();
     }
 
 
@@ -307,6 +330,20 @@ public class StatsManager : MonoBehaviour
             ActualizarVelocidad2();
         }
         ActualizarVida();   
+    }
+
+    private void ActualizarUIStart()
+    {
+        ActualizarAtaque1();
+        ActualizarAtaque2();
+       
+        ActualizarDefensa1();
+        ActualizarDefensa2();
+        
+        ActualizarVelocidad1();
+        ActualizarVelocidad2();
+       
+        ActualizarVida();
     }
     private void ActualizarAtaque1()
     {

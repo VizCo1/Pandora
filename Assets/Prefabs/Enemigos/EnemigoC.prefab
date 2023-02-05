@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 2246498045196403393}
   - component: {fileID: 8380984454542415231}
   - component: {fileID: 2930118202485682722}
+  - component: {fileID: 1799101862}
   m_Layer: 0
   m_Name: EnemigoC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2246498045196403397
 Transform:
   m_ObjectHideFlags: 0
@@ -102,14 +103,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suelo: {fileID: 0}
   movementController2D: {fileID: 2246498045196403393}
-  objetivos: []
+  objetivos:
+  - {fileID: 0}
+  - {fileID: 0}
   vida: 100
   ataque: 50
   velocidad: 0.01
-  distanciaVision: 4
+  distanciaVision: 5
   mascaraSuelo:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   desplazamientoInicialCompletado: 0
 --- !u!114 &2246498045196403393
 MonoBehaviour:
@@ -138,19 +141,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2246498045196403394}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2930118202485682722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +180,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &1799101862
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246498045196403394}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28067e3751536564abcc7f53c19ac985, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

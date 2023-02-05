@@ -64,7 +64,7 @@ MonoBehaviour:
   attackParticles2: {fileID: 2375439964074698249}
   defenseParticles2: {fileID: 2375439963914171920}
   velocityParticles2: {fileID: 2375439964687392703}
-  velocidadReduccion: 0.3
+  velocidadReduccion: 0.4
 --- !u!1 &5960706792100527616
 GameObject:
   m_ObjectHideFlags: 0
