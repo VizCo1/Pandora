@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 [System.Serializable]
 public class Stats
@@ -28,21 +29,35 @@ public enum TipoStat
 
 public class StatsManager : MonoBehaviour
 {
+    // JUGADOR 1
     public Stats statsJugador1; // Objeto principal para los stats del jugador
     [SerializeField] private GameObject statsUI1;
     [SerializeField] private Slider humanHealth1Slider;
-    private Slider ataqueJ1;
-    private Slider defensaJ1;
-    private Slider velocidadJ1;
+    private Slider ataqueJ1Slider;
+    [SerializeField] private ParticleSystem attackParticles1;
+    private Slider defensaJ1Slider;
+    [SerializeField] private ParticleSystem defenseParticles1;
+    private Slider velocidadJ1Slider;
+    [SerializeField] private ParticleSystem velocityParticles1;
 
+    [Space]
+
+    // JUGADOR 2
     public Stats statsJugador2;
     [SerializeField] private GameObject statsUI2;
     [SerializeField] private Slider humanHealth2Slider;
-    private Slider ataqueJ2;
-    private Slider defensaJ2;
-    private Slider velocidadJ2;
+    private Slider ataqueJ2Slider;
+    [SerializeField] private ParticleSystem attackParticles2;
+    private Slider defensaJ2Slider;
+    [SerializeField] private ParticleSystem defenseParticles2;
+    private Slider velocidadJ2Slider;
+    [SerializeField] private ParticleSystem velocityParticles2;
 
+    [Space]
+
+    // UI
     [SerializeField] float velocidadReduccion = 0.2f;
+   // [SerializeField] float shakeDuration = 0.1f;
 
     private bool exchangingStats;
 
@@ -52,23 +67,22 @@ public class StatsManager : MonoBehaviour
     private bool exchangingP1;
     private bool exchangingP2;
 
+
     void Awake()
     {
-        ataqueJ1 = statsUI1.transform.GetChild(0).GetComponent<Slider>();
-        defensaJ1 = statsUI1.transform.GetChild(1).GetComponent<Slider>();
-        velocidadJ1 = statsUI1.transform.GetChild(2).GetComponent<Slider>();
+        ataqueJ1Slider = statsUI1.transform.GetChild(0).GetComponent<Slider>();
+        defensaJ1Slider = statsUI1.transform.GetChild(1).GetComponent<Slider>();
+        velocidadJ1Slider = statsUI1.transform.GetChild(2).GetComponent<Slider>();
 
-        ataqueJ2 = statsUI2.transform.GetChild(0).GetComponent<Slider>();
-        defensaJ2 = statsUI2.transform.GetChild(1).GetComponent<Slider>();
-        velocidadJ2 = statsUI2.transform.GetChild(2).GetComponent<Slider>();
+        ataqueJ2Slider = statsUI2.transform.GetChild(0).GetComponent<Slider>();
+        defensaJ2Slider = statsUI2.transform.GetChild(1).GetComponent<Slider>();
+        velocidadJ2Slider = statsUI2.transform.GetChild(2).GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ActualizarUI();
-
-        if(exchangingStats)
+        if(exchangingStats) // changes when input is detected
         {
             if (exchangingP1) 
             {
@@ -81,9 +95,23 @@ public class StatsManager : MonoBehaviour
                 statsJugador2.humanLife -= velocidadReduccion * 5 * Time.deltaTime;
             }
         }
-
+        else
+        {
+            StopAllParticles();
+        }
     }
 
+    private void StopAllParticles()
+    {
+        attackParticles1.Stop();
+        defenseParticles1.Stop();
+        velocityParticles1.Stop();
+        attackParticles2.Stop();
+        defenseParticles2.Stop();
+        velocityParticles2.Stop();
+    }
+
+    #region InputHandlers
     public void BotonAtaquePulsadoJ1(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -92,12 +120,12 @@ public class StatsManager : MonoBehaviour
             exchangingP1 = true;
             statExchangeTypeP1 = (int)TipoStat.Ataque;
         }
-        else if(context.canceled)
+        else if (context.canceled)
         {
             exchangingP1 = false;
             exchangingStats = false;
         }
-        
+
     }
 
     public void BotonAtaquePulsadoJ2(InputAction.CallbackContext context)
@@ -178,7 +206,8 @@ public class StatsManager : MonoBehaviour
             exchangingP2 = false;
         }
 
-    }
+    } 
+    #endregion
 
     public void IntercambiarStatParaJ1(int tipo)
     {
@@ -246,7 +275,8 @@ public class StatsManager : MonoBehaviour
     {
         stat -= velocidadReduccion * Time.deltaTime;
         stat = Mathf.Clamp01(stat);
-       
+
+        ActualizarUI();
     }
 
     private void IncreaseStat(ref float stat)
@@ -254,48 +284,64 @@ public class StatsManager : MonoBehaviour
         stat += velocidadReduccion * Time.deltaTime;
         stat = Mathf.Clamp01(stat);
 
+        ActualizarUI();
     }
 
 
     // ACTUALIZACIÓN DE UI
     private void ActualizarUI()
     {
-        ActualizarAtaque1();
-        ActualizarAtaque2();
-        ActualizarDefensa1();
-        ActualizarDefensa2();
-        ActualizarVelocidad1();
-        ActualizarVelocidad2();
+        if (exchangingP1 && statExchangeTypeP1 == (int) TipoStat.Ataque || exchangingP2 && statExchangeTypeP2 == (int)TipoStat.Ataque)
+        {
+            ActualizarAtaque1();
+            ActualizarAtaque2();
+        }
+        if (exchangingP1 && statExchangeTypeP1 == (int)TipoStat.Defensa || exchangingP2 && statExchangeTypeP2 == (int)TipoStat.Defensa)
+        {
+            ActualizarDefensa1();
+            ActualizarDefensa2();
+        }
+        if(exchangingP1 && statExchangeTypeP1 == (int)TipoStat.Velocidad || exchangingP2 && statExchangeTypeP2 == (int)TipoStat.Velocidad)
+        {
+            ActualizarVelocidad1();
+            ActualizarVelocidad2();
+        }
         ActualizarVida();   
     }
     private void ActualizarAtaque1()
     {
-        ataqueJ1.value = statsJugador1.ataque;
+        ataqueJ1Slider.value = statsJugador1.ataque;
+        attackParticles1.Play();
     }
 
     private void ActualizarAtaque2()
     {
-        ataqueJ2.value = statsJugador2.ataque;
+        ataqueJ2Slider.value = statsJugador2.ataque;
+        attackParticles2.Play();
     }
 
     private void ActualizarDefensa1()
     {
-        defensaJ1.value = statsJugador1.defensa;
+        defensaJ1Slider.value = statsJugador1.defensa;
+        defenseParticles1.Play();
     }
 
     private void ActualizarDefensa2()
     {
-        defensaJ2.value = statsJugador2.defensa;
+        defensaJ2Slider.value = statsJugador2.defensa;
+        defenseParticles2.Play();
     }
 
     private void ActualizarVelocidad1()
     {
-        velocidadJ1.value = statsJugador1.velocidad;
+        velocidadJ1Slider.value = statsJugador1.velocidad;
+        velocityParticles1.Play();
     }
 
     private void ActualizarVelocidad2()
     {
-        velocidadJ2.value = statsJugador2.velocidad;
+        velocidadJ2Slider.value = statsJugador2.velocidad;
+        velocityParticles2.Play();
     }
 
     private void ActualizarVida()
@@ -303,6 +349,12 @@ public class StatsManager : MonoBehaviour
         humanHealth1Slider.value = statsJugador1.humanLife / 100;
         humanHealth2Slider.value = statsJugador2.humanLife / 100;
     }
+
+    //private void ShakeSlider(Transform transform)
+    //{
+    //    Transform aux = transform;
+    //    transform.DOShakePosition(shakeDuration, 1, 5, 20, false, true).OnComplete(() => { transform = aux; });
+    //}
 }
 
 
