@@ -13,12 +13,17 @@ public class CaraManager : MonoBehaviour
     float vidaParaCambiar = 66f;
     int indice = 0;
     [SerializeField] StatsManager statsManager;
+
+    Vector2 fuerza;
+    int vibrato = 3;
     
 
     private void Start()
     {
+        fuerza = new Vector2(0.5f, 0.1f);
         image = GetComponent<Image>();
-         
+        //transform.DOShakePosition(5f, fuerza, vibrato, 90, false, false).SetLoops(-1);
+        
     }
 
     void Update()
@@ -30,6 +35,9 @@ public class CaraManager : MonoBehaviour
             if (humanLife <= vidaParaCambiar)
             {
                 CambiarImagen(indice++);
+                fuerza = new Vector2(fuerza.x + 1.25f, fuerza.y);
+                vibrato++;
+                transform.DOShakePosition(5f, fuerza, vibrato, 90, false, false).SetLoops(-1);
                 vidaParaCambiar -= 33f;
             }
         }
