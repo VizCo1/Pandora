@@ -25,7 +25,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy"))
         {
 
             Debug.Log("PlayerHit");
@@ -38,10 +38,10 @@ public class PlayerLife : MonoBehaviour
 
             if (rb != null)
             {
-                // Particles
+                // Particles of player hurt
                 GameObject particlesGO = Instantiate(hitParticleSystem, transform);
                 ParticleSystem damagedParticles = particlesGO.GetComponent<ParticleSystem>();
-               
+
                 damagedParticles.Play();
                 Destroy(damagedParticles, 2f);
                 Destroy(particlesGO, 2f);
@@ -73,7 +73,61 @@ public class PlayerLife : MonoBehaviour
                 }
 
                 if (health <= 0)
-                    SceneManager.LoadScene(playerNumber+1);
+                    SceneManager.LoadScene(playerNumber + 1);
+            }
+        }
+        else if (collision.tag == "Bala")
+        {
+            Debug.Log("PlayerHit");
+
+            health -= 5f - playerStats.defensa * 3;
+
+            playerStats.humanLife = health;
+
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                // Particles of player hurt
+                GameObject particlesGO = Instantiate(hitParticleSystem, transform);
+                ParticleSystem damagedParticles = particlesGO.GetComponent<ParticleSystem>();
+
+                damagedParticles.Play();
+                Destroy(damagedParticles, 2f);
+                Destroy(particlesGO, 2f);
+
+                // Force
+                Vector2 forceDirection = transform.position - collision.transform.position;
+
+                if (playerStats.velocidad < 0.3f)
+                {
+                    forceDirection = forceDirection.normalized * knockback * (knockback * 0.3f + 1.2f);
+                }
+                else
+                {
+                    forceDirection = forceDirection.normalized * knockback * (knockback * playerStats.velocidad + 1.2f);
+                }
+                rb.AddForce(forceDirection, ForceMode2D.Impulse);
+
+                // Tween drag
+                Sequence seq = DOTween.Sequence();
+                seq.Append(
+                DOVirtual.Float(0, 25, 0.1f, ChangeRbDrag)
+                );
+                seq.Append(
+                    DOVirtual.Float(25, 0, 0.2f, ChangeRbDrag)
+                    );
+
+                void ChangeRbDrag(float drag)
+                {
+                    rb.drag = drag;
+                }
+
+                // destroy bullet
+                Destroy(collision.gameObject);
+
+                if (health <= 0)
+                    SceneManager.LoadScene(playerNumber + 1);
             }
         }
     }
