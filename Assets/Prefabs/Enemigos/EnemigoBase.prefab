@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &338728389597352008
 Transform:
   m_ObjectHideFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a7586197acec3488119369e913301a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suelo: {fileID: 0}
   movementController2D: {fileID: 338728389597352010}
   objetivos:
   - {fileID: 0}
@@ -106,9 +107,10 @@ MonoBehaviour:
   ataque: 20
   velocidad: 0.01
   distanciaVision: 2
-  suelo:
+  mascaraSuelo:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 0
+  desplazamientoInicialCompletado: 0
 --- !u!114 &338728389597352010
 MonoBehaviour:
   m_ObjectHideFlags: 0
