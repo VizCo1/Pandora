@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Damager
   - Enemy
+  - Bala
   layers:
   - Default
   - TransparentFX

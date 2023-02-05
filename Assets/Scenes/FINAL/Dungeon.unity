@@ -1133,6 +1133,14 @@ PrefabInstance:
       propertyPath: hitParticleSystem
       value: 
       objectReference: {fileID: 6355700437869926041}
+    - target: {fileID: 48534000651128870, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: m_Pitch
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 48534000651128870, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: m_Volume
+      value: 0.029
+      objectReference: {fileID: 0}
     - target: {fileID: 520936718289024799, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1201,6 +1209,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.76
       objectReference: {fileID: 0}
+    - target: {fileID: 7262771491222392707, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
+      propertyPath: hitParticleSystem
+      value: 
+      objectReference: {fileID: 613132950}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
 --- !u!4 &1582473757 stripped
@@ -1208,27 +1220,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 520936718289024799, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
   m_PrefabInstance: {fileID: 1582473756}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1582473758 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2434950467130775301, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
-  m_PrefabInstance: {fileID: 1582473756}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1582473759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582473758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8ae1477ca18ca4e86df510af9f5c44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  playerNumber: 1
-  knockback: 10
-  hitParticleSystem: {fileID: 613132950}
 --- !u!1 &1588814995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 364538551608746932, guid: 0348f656f69edc04ea3070eec9bda007, type: 3}
@@ -1796,6 +1787,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6355700437869926041}
     - target: {fileID: 1824973494, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1824973495}
+    - target: {fileID: 1824973494, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: hitParticleSystem
       value: 
       objectReference: {fileID: 613132950}
@@ -1819,6 +1814,14 @@ PrefabInstance:
       propertyPath: statManager
       value: 
       objectReference: {fileID: 24395249}
+    - target: {fileID: 205187051908879500, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_Pitch
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 205187051908879500, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+      propertyPath: m_Volume
+      value: 0.029
+      objectReference: {fileID: 0}
     - target: {fileID: 6684020086424422938, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1872,6 +1875,11 @@ PrefabInstance:
 --- !u!4 &1824973487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6684020086424422938, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
+  m_PrefabInstance: {fileID: 1824973486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1824973495 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 205187051908879500, guid: a1942e1e0717946458aac57c008e0e53, type: 3}
   m_PrefabInstance: {fileID: 1824973486}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1826329074
