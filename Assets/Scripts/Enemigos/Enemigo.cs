@@ -27,6 +27,8 @@ public class Enemigo : MonoBehaviour
     protected Vector3 walkPoint;
     [SerializeField] protected LayerMask mascaraSuelo;
 
+    [SerializeField] protected float margenMapaParaDestruir = 10;
+
     protected float distanciaJugador1;
     protected float distanciaJugador2;
 
@@ -60,6 +62,7 @@ public class Enemigo : MonoBehaviour
                 || EstaDentroDelTablero())
             {
                 desplazamientoInicialCompletado = true;
+                movementController2D.SetSpeed(velocidad*0.5f);
             }
                 
         }
@@ -81,8 +84,8 @@ public class Enemigo : MonoBehaviour
 
     private bool EstaDentroDelTableroDestruir()
     {
-        return transform.position.x > suelo.GetChild(2).position.x && transform.position.x < suelo.GetChild(3).position.x
-                && transform.position.y > suelo.GetChild(3).position.y && transform.position.y < suelo.GetChild(2).position.y;
+        return transform.position.x > suelo.GetChild(2).position.x - margenMapaParaDestruir && transform.position.x < suelo.GetChild(3).position.x + margenMapaParaDestruir
+                && transform.position.y > suelo.GetChild(3).position.y - margenMapaParaDestruir && transform.position.y < suelo.GetChild(2).position.y + margenMapaParaDestruir;
     }
 
     private void ComprobarTarget()
