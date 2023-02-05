@@ -77,6 +77,7 @@ public class EnemigoB : Enemigo
         direccion /= direccion.magnitude;
 
         GameObject proyectil = Instantiate(bala, posDisparo.position, Quaternion.identity);
+        proyectil.transform.up = -(objetivos[jugadorObjetivo].position - proyectil.transform.position);
         proyectil.GetComponent<Rigidbody2D>().velocity = direccion * 10;
 
 

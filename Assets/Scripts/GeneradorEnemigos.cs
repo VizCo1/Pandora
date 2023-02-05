@@ -12,7 +12,7 @@ public class GeneradorEnemigos : MonoBehaviour
     int i = 0;
     bool rondaCompletada = false;
     float tiempo = 0;
-    float tiempoMax = 10f;
+    float tiempoMax = 15f;
 
     void Start()
     {

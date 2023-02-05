@@ -72,7 +72,7 @@ public class EnemigoC : Enemigo
 
         puedeEmbestir = false;
 
-        rb.velocity = direccion * 20;
+        rb.velocity = direccion * 16f;
 
         embestidaPreparada = false;
 
@@ -81,7 +81,7 @@ public class EnemigoC : Enemigo
 
     IEnumerator ResetEmbestida()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         puedeEmbestir = true;
         //embestidaPreparada = false;
     }

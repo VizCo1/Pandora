@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -17,8 +18,6 @@ public class PlayerLife : MonoBehaviour
 
     public GameObject hitParticleSystem;
 
-    public UnityEvent onPlayerDeath;
-
     private void Start()
     {
         playerStats = playerNumber == 0 ? StatsManager.instance.statsJugador1 : StatsManager.instance.statsJugador2;
@@ -26,7 +25,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if(collision.CompareTag("Enemy"))
         {
 
             Debug.Log("PlayerHit");
@@ -74,7 +73,7 @@ public class PlayerLife : MonoBehaviour
                 }
 
                 if (health <= 0)
-                    onPlayerDeath.Invoke();
+                    SceneManager.LoadScene(playerNumber+1);
             }
         }
     }

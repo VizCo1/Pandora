@@ -5,17 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/MenuPrincipal.unity
+    path: Assets/Scenes/FINAL/Menus/MenuPrincipal.unity
     guid: 245843f1f9ddedd40973c286a6aea51c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Escena1.unity
-    guid: 258745f0aca123d45a84941ebdcee310
+    path: Assets/Scenes/FINAL/Menus/GanaTriste.unity
+    guid: dab349c241ed2004c949ed081d1c76a8
   - enabled: 1
-    path: Assets/Scenes/HasMuerto.unity
-    guid: 6eae801da1fe49e4a8e6f08bd4c199f0
-  - enabled: 1
-    path: Assets/Scenes/Hasganado.unity
+    path: Assets/Scenes/FINAL/Menus/GanaFeliz.unity
     guid: 0daaba40a98a04f40880faf90527f026
+  - enabled: 1
+    path: Assets/Scenes/FINAL/Dungeon.unity
+    guid: 90774a52985940f459c042812ea05815
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4a42381b15511ad4a9c81c1359a5aacf, type: 2}

@@ -55,15 +55,32 @@ public class Enemigo : MonoBehaviour
             MoverA(posFuturaInicial);
 
             if ((distanciaJugador2 < distanciaVision || distanciaJugador1 < distanciaVision) 
-                || (transform.position.x > suelo.GetChild(0).position.x && transform.position.x < suelo.GetChild(1).position.x
-                && transform.position.y > suelo.GetChild(1).position.y && transform.position.y < suelo.GetChild(0).position.y))
+                || EstaDentroDelTablero())
             {
                 desplazamientoInicialCompletado = true;
             }
                 
         }
         else
+        {
             ComprobarTarget();
+            if (!EstaDentroDelTableroDestruir())
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private bool EstaDentroDelTablero()
+    {
+        return transform.position.x > suelo.GetChild(0).position.x && transform.position.x < suelo.GetChild(1).position.x
+                && transform.position.y > suelo.GetChild(1).position.y && transform.position.y < suelo.GetChild(0).position.y;
+    }
+
+    private bool EstaDentroDelTableroDestruir()
+    {
+        return transform.position.x > suelo.GetChild(2).position.x && transform.position.x < suelo.GetChild(3).position.x
+                && transform.position.y > suelo.GetChild(3).position.y && transform.position.y < suelo.GetChild(2).position.y;
     }
 
     private void ComprobarTarget()
