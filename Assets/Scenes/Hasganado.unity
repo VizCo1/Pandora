@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: -46}
+  m_AnchoredPosition: {x: 205, y: -46}
   m_SizeDelta: {x: 244.5125, y: 72.9064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85679534
@@ -716,7 +716,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -205, y: -46}
-  m_SizeDelta: {x: 244.5125, y: 72.9064}
+  m_SizeDelta: {x: 244.51251, y: 72.9064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564907071
 MonoBehaviour:
@@ -847,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000007391, y: -16.008}
+  m_AnchoredPosition: {x: 0, y: -16.008}
   m_SizeDelta: {x: 237.1217, y: 104.9216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770551440
@@ -900,7 +900,7 @@ GameObject:
   - component: {fileID: 1859814815}
   - component: {fileID: 1859814814}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Has Ganado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
