@@ -49,7 +49,7 @@ MonoBehaviour:
     defensa: 0.5
     velocidad: 0.1
     humanLife: 100
-  statsUI1: {fileID: 2652772960889203144}
+  statsUI1: {fileID: 2652772960458531569}
   humanHealth1Slider: {fileID: 2652772959886744235}
   attackParticles1: {fileID: 5960706792253466513}
   defenseParticles1: {fileID: 5960706792398272392}
@@ -699,9 +699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2652772960889203144 stripped
+--- !u!1 &2652772960458531569 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8532111055780048408, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8532111056411583777, guid: 5cb3fe88019f1c04eae8b663a042d1a4, type: 3}
   m_PrefabInstance: {fileID: 5960706792554760144}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &2652772960889203147 stripped
